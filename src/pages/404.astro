@@ -1,0 +1,19 @@
+---
+import { getEntry } from "astro:content";
+
+import { processCollectionItem } from "@lib/collections";
+import MDPage from "@components/MDPage.astro";
+import PageList from "@components/PageList.astro";
+
+export const prerender = true;
+
+const {
+  props: { page },
+} = await processCollectionItem(await getEntry("kb", "meta/404"));
+page.data.date = new Date();
+---
+
+<MDPage page={page}>
+  <h2>Latest Pages</h2>
+  <PageList collection="kb" count={17} />
+</MDPage>

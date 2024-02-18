@@ -1,0 +1,101 @@
+@import "@picocss/pico/css/pico.classless.min.css";
+@import "@fortawesome/fontawesome-svg-core/styles.css";
+
+body {
+  > main {
+    max-width: 700px;
+
+    > details {
+      display: inline-block;
+      max-width: 100%;
+      border: solid var(--pico-muted-border-color) var(--pico-border-width);
+      border-radius: var(--pico-border-radius);
+      border-left-width: calc(4 * var(--pico-border-width));
+      padding: calc(var(--pico-spacing) * 0.5);
+      box-shadow: 0 0 0.25rem var(--pico-muted-border-color);
+    }
+
+    > section.footnotes {
+      margin-bottom: 0;
+      border-top: solid var(--pico-muted-border-color) var(--pico-border-width);
+      padding: var(--pico-typography-spacing-vertical);
+    }
+
+    > section.toc {
+      position: sticky;
+      top: 0;
+      margin-bottom: calc(2 * var(--pico-typography-spacing-vertical));
+      z-index: 10;
+
+      > details.toc-details {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: block;
+        max-width: 100%;
+        border: solid var(--pico-muted-border-color) var(--pico-border-width);
+        border-radius: var(--pico-border-radius);
+        border-left-width: calc(4 * var(--pico-border-width));
+        padding: calc(var(--pico-spacing) * 0.5);
+        box-shadow: 0 0 0.25rem var(--pico-muted-border-color);
+      }
+    }
+
+    > figure {
+      text-align: center;
+
+      > figcaption {
+        color: var(--pico-muted-color);
+      }
+    }
+
+    blockquote {
+      border-radius: calc(var(--pico-border-radius) * 2);
+      border-bottom: solid var(--pico-muted-border-color)
+        calc(var(--pico-border-width));
+      box-shadow: 0 0 0.1rem var(--pico-muted-border-color);
+      border-color: #029ae8;
+
+      > p {
+        margin: 0;
+      }
+    }
+
+    > pre > code {
+      border: solid var(--pico-muted-border-color)
+        calc(4 * var(--pico-border-width));
+      overflow: auto;
+    }
+
+    > figure > img {
+      box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
+      border-radius: calc(var(--pico-border-radius) * 2);
+    }
+
+    > p.hint {
+      box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
+      border: solid var(--pico-muted-border-color)
+        calc(1.5 * var(--pico-border-width));
+      border-radius: calc(var(--pico-border-radius) * 2);
+      border-left-width: calc(6 * var(--pico-border-width));
+      padding: var(--pico-spacing);
+    }
+
+    > p.hint.tip {
+      border-color: #00a66e;
+      /* background-color: #e9f2fc; */
+    }
+
+    > p.hint.warn {
+      border-color: #ffbf00;
+      /* background-color: #fcefd9; */
+    }
+
+    > p.hint.error {
+      border-color: #f45d2c;
+      /* background-color: #faeeea; */
+    }
+
+    > span.katex-display {
+      overflow-x: auto;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+---
+import { getEntry } from "astro:content";
+import * as nodeEmoji from "node-emoji";
+
+const {
+  area: { collection, id },
+} = Astro.props;
+
+const {
+  data: { label, emoji, backgroundColor, borderColor },
+} = await getEntry(collection, id);
+---
+
+<style>
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a {
+    display: inline-block;
+    border-style: solid;
+    border-width: var(--pico-border-width);
+    border-radius: calc(1.5 * var(--pico-border-radius));
+    padding: calc(0.1 * var(--pico-spacing)) calc(0.4 * var(--pico-spacing));
+  }
+</style>
+
+<a
+  title={`Overview for ${label}`}
+  href={`/overview/${id}`}
+  style={{ backgroundColor, borderColor }}
+>
+  {nodeEmoji.get(emoji)}
+  {id}
+</a>

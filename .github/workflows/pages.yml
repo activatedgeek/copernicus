@@ -1,0 +1,79 @@
+name: Cloudflare Pages
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  push: []
+
+env:
+  ASTRO_SITE: ${{ vars.ASTRO_SITE }}
+  GOATCOUNTER_SITE: ${{ vars.GOATCOUNTER_SITE }}
+  ## Node related.
+  DISABLE_OPENCOLLECTIVE: 1
+  ADBLOCK: 1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout beagle
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.actor }}/${{ secrets.PAGES_REPO }}
+          token: ${{ secrets.GH_PAT }}
+          path: ${{ secrets.PAGES_REPO }}
+
+      - name: Prepare Markdown Files
+        run: |
+          cp -r ${{ secrets.PAGES_REPO }}/www/* src/content/
+
+      - name: Get CV
+        run: curl -o public/cv.pdf ${{ secrets.CV_URL }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build copernicus
+        run: npm run build
+
+      # https://developers.cloudflare.com/pages/configuration/redirects/
+      - name: Rename Cloudflare Pages Redirect
+        run: mv dist/redirects dist/_redirects
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Download Pages Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pages
+          path: dist
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

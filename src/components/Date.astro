@@ -1,0 +1,34 @@
+---
+const { date, format = "bdY" } = Astro.props;
+
+const formatMap = {
+  bdY: date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }),
+  bY: date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  }),
+  Y: date.toLocaleDateString("en-US", {
+    year: "numeric",
+  }),
+  HM: date.toLocaleTimeString("it-IT", {
+    hour: "numeric",
+    minute: "numeric",
+  }),
+};
+---
+
+<style>
+  time {
+    border-bottom: none;
+    cursor: inherit;
+  }
+</style>
+
+<time
+  datetime={date.toLocaleString()}
+  title={`${formatMap.bdY} ${formatMap.HM}`}>{formatMap[format]}</time
+>

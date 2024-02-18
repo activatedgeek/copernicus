@@ -1,0 +1,14 @@
+---
+import { getEntry } from "astro:content";
+
+import { processCollectionItem } from "@lib/collections";
+import MDPage from "@components/MDPage.astro";
+
+export const prerender = true;
+
+const {
+  props: { page },
+} = await processCollectionItem(await getEntry("kb", "index"));
+---
+
+<MDPage page={page} />

@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+import { processCollectionItem } from "@lib/collections";
+import MDPage from "@components/MDPage.astro";
+import PageList from "@components/PageList.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return (
+    await Promise.all(
+      (await getCollection("overview")).map(processCollectionItem),
+    )
+  ).map(({ props }) => ({ params: { slug: props.page.data.area.id }, props }));
+}
+
+const { page } = Astro.props;
+const {
+  data: {
+    area: { id },
+  },
+} = page;
+---
+
+<MDPage page={page}>
+  <h2>Latest Pages</h2>
+  <PageList collection="kb" areaId={id} />
+</MDPage>

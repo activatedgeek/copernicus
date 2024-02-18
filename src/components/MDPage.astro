@@ -1,0 +1,88 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarDay, faTag } from "@fortawesome/free-solid-svg-icons";
+
+import Html from "@components/Html.astro";
+import Date from "@components/Date.astro";
+import Area from "@components/Area.astro";
+
+import "@styles/katex.css";
+
+const { page } = Astro.props;
+const { data: frontmatter } = page;
+const { Content } = await page.render();
+
+const { title, description, date, updated, area } = frontmatter;
+---
+
+<style>
+  section {
+    padding-bottom: calc(0.5 * var(--pico-spacing));
+    border-bottom: solid var(--pico-muted-border-color)
+      calc(1.5 * var(--pico-border-width));
+
+    > h1 {
+      margin-bottom: calc(0.25 * var(--pico-typography-spacing-vertical));
+    }
+
+    > p {
+      color: var(--pico-muted-color);
+      font-size: calc(var(--pico-font-size) * 0.8);
+      margin-bottom: calc(0.25 * var(--pico-typography-spacing-vertical));
+    }
+
+    > div {
+      display: flex;
+      vertical-align: middle;
+      align-items: center;
+      color: var(--pico-muted-color);
+      font-size: calc(var(--pico-font-size) * 0.6);
+
+      > div {
+        margin-right: calc(0.75 * var(--pico-spacing));
+
+        > span {
+          display: inline-block;
+          border: solid var(--pico-muted-border-color) var(--pico-border-width);
+          border-radius: calc(1.5 * var(--pico-border-radius));
+          padding: calc(0.1 * var(--pico-spacing))
+            calc(0.4 * var(--pico-spacing));
+          background-color: #f8fafc;
+          border-color: #64748b;
+        }
+      }
+    }
+  }
+</style>
+
+<Html frontmatter={frontmatter}>
+  <main>
+    <section>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <div>
+        <div>
+          {
+            updated || date ? (
+              <>
+                <FontAwesomeIcon
+                  icon={faCalendarDay}
+                  color="var(--pico-muted-color)"
+                />{" "}
+                <span>
+                  <Date date={updated || date} />
+                </span>
+              </>
+            ) : null
+          }
+        </div>
+        <div>
+          <FontAwesomeIcon icon={faTag} color="var(--pico-muted-color)" />{" "}
+          <Area {area} />
+        </div>
+      </div>
+    </section>
+    <Content />
+    <slot />
+  </main>
+</Html>

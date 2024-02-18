@@ -1,0 +1,31 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBrain } from "@fortawesome/free-solid-svg-icons";
+---
+
+<style>
+  header {
+    padding: 0 var(--pico-typography-spacing-vertical);
+    border-bottom: solid var(--pico-muted-border-color)
+      calc(3 * var(--pico-border-width));
+  }
+</style>
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="/">
+          <image src="/sk.svg" alt="SK Logo" width={70} height="auto" />
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a title="Knowledge Base" href="/kb"
+          ><FontAwesomeIcon icon={faBrain} color="var(--pico-primary)" /> KB</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

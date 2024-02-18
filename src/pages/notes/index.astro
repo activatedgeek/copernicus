@@ -1,0 +1,18 @@
+---
+import { getEntry } from "astro:content";
+
+import { processCollectionItem } from "@lib/collections";
+import MDPage from "@components/MDPage.astro";
+import PageList from "@components/PageList.astro";
+
+export const prerender = true;
+
+const {
+  props: { page },
+} = await processCollectionItem(await getEntry("notes", "meta/home"));
+---
+
+<MDPage page={page}>
+  <h2>Latest Notes</h2>
+  <PageList collection="notes" />
+</MDPage>

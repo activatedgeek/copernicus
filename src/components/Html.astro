@@ -1,0 +1,86 @@
+---
+import { getEntry } from "astro:content";
+
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+
+import "@styles/main.css";
+
+const {
+  frontmatter: { title, description, date, updated, keywords, authors },
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, import.meta.env.SITE);
+
+const authorsList = await Promise.all(
+  authors.map(async ({ collection: c, id }) => await getEntry(c, id)),
+);
+
+const {
+  data: { name: siteAuthorName },
+} = await getEntry("authors", "sk");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <title>{title} | {siteAuthorName}</title>
+    <meta name="description" content={description} />
+    {
+      authorsList.map(({ data: { name, url } }) => (
+        <>
+          <meta name="author" content={name} />
+          <link rel="author" href={url} />
+        </>
+      ))
+    }
+
+    <meta name="keywords" content={(keywords || []).join(",")} />
+    <meta name="publisher" content={canonicalURL.hostname} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={date.toISOString()} />
+    {
+      updated ? (
+        <meta
+          property="article:modified_time"
+          content={updated.toISOString()}
+        />
+      ) : null
+    }
+    {
+      authorsList.map(({ data: { name } }) => (
+        <meta property="article:author" content={name} />
+      ))
+    }
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    {
+      import.meta.env.GOATCOUNTER_SITE ? (
+        <script
+          is:inline
+          data-goatcounter={`https://${import.meta.env.GOATCOUNTER_SITE}/count`}
+          async
+          src="//gc.zgo.at/count.js"
+        />
+      ) : null
+    }
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

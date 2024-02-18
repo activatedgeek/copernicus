@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+
+import { processCollectionItem } from "@lib/collections";
+
+import Date from "./Date.astro";
+import Area from "./Area.astro";
+
+const { collection, count, areaId } = Astro.props;
+
+const allPages = (
+  await Promise.all(
+    (await getCollection(collection)).map(processCollectionItem),
+  )
+)
+  .map(
+    ({
+      params: { slug },
+      props: {
+        page: {
+          data: { title, date, updated, area },
+        },
+      },
+    }) => ({
+      area,
+      slug,
+      title,
+      updated: updated || date,
+    }),
+  )
+  .filter(({ area: { id } }) => {
+    if (!!areaId) {
+      return id == areaId;
+    }
+    return true;
+  })
+  .toSorted(({ updated: a }, { updated: b }) => b - a)
+  .slice(0, count);
+---
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: max-content auto;
+    vertical-align: middle;
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      vertical-align: middle;
+      align-items: center;
+      padding: calc(var(--pico-spacing) * 0.5) var(--pico-spacing);
+      border-bottom: solid var(--pico-muted-border-color)
+        var(--pico-border-width);
+
+      > a {
+        margin-right: calc(0.5 * var(--pico-spacing));
+        text-decoration: none;
+      }
+      > div.area {
+        font-size: calc(var(--pico-font-size) * 0.7);
+      }
+    }
+
+    > div.date {
+      color: var(--pico-muted-color);
+      font-size: calc(var(--pico-font-size) * 0.6);
+    }
+  }
+</style>
+
+<section>
+  {
+    allPages.map(({ slug, title, updated, area }) => (
+      <>
+        <div class="date">
+          <Date date={updated} format="bY" />
+        </div>
+        <div>
+          <a href={`/${collection}/${slug}`}>{title}</a>
+          <div class="area">
+            <Area area={area} />
+          </div>
+        </div>
+      </>
+    ))
+  }
+</section>

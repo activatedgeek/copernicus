@@ -1,0 +1,136 @@
+---
+import { getEntry } from "astro:content";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserGraduate,
+  faGraduationCap,
+  faArchive,
+  faNoteSticky,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faStackOverflow,
+  faXTwitter,
+  faHackerNewsSquare,
+} from "@fortawesome/free-brands-svg-icons";
+
+import { getSocialItem } from "@lib/collections";
+
+const {
+  data: { name },
+} = await getEntry("authors", "sk");
+---
+
+<style>
+  footer {
+    border-top: solid var(--pico-muted-border-color)
+      calc(3 * var(--pico-border-width));
+
+    > nav {
+      width: 100%;
+      justify-content: center;
+      > ul > li {
+        padding-top: 0;
+
+        > a {
+          padding: 0;
+          margin: calc(0.01 * var(--pico-spacing));
+        }
+      }
+
+      > ul > li.copyright {
+        color: var(--pico-muted-color);
+        font-size: calc(var(--pico-font-size) * 0.7);
+      }
+    }
+  }
+</style>
+
+<footer>
+  <nav>
+    <ul>
+      <li class="copyright">
+        &copy; {new Date().getFullYear()}
+        {name}
+      </li>
+    </ul>
+  </nav>
+  <nav>
+    <ul>
+      <li>
+        <a
+          title="Google Scholar"
+          href={(await getSocialItem("scholar")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faGraduationCap} color="#4d90fe" /></a
+        >
+      </li>
+      <li>
+        <a
+          title="Semantic Scholar"
+          href={(await getSocialItem("sscholar")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faUserGraduate} color="#f4d35e" /></a
+        >
+      </li>
+      <li>
+        <a
+          title="Github"
+          href={(await getSocialItem("gh")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faGithub} color="#24292f" /></a
+        >
+      </li>
+      <li>
+        <a
+          title="Hacker News"
+          href={(await getSocialItem("hn")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faHackerNewsSquare} color="#ff6600" /></a
+        >
+      </li>
+      <li>
+        <a
+          title="LinkedIn"
+          href={(await getSocialItem("lnkd")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faLinkedin} color="#0a66c2" /></a
+        >
+      </li>
+      <li>
+        <a
+          title="StackOverflow"
+          href={(await getSocialItem("so")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faStackOverflow} color="#f48225" /></a
+        >
+      </li>
+      <li>
+        <a
+          title="Twitter"
+          href={(await getSocialItem("twtr")).url}
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FontAwesomeIcon icon={faXTwitter} color="#0f1419" /></a
+        >
+      </li>
+      <li>
+        <a title="Notes" href="/notes">
+          <FontAwesomeIcon icon={faNoteSticky} color="#9062ca" />
+        </a>
+      </li>
+      <li>
+        <a title="Archive" href="/archive">
+          <FontAwesomeIcon icon={faArchive} color="#959082" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</footer>
