@@ -1,107 +1,116 @@
 @import "@picocss/pico/css/pico.classless.min.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap");
 @import "@fortawesome/fontawesome-svg-core/styles.css";
+
+:root {
+  --pico-font-family-sans-serif: "Assistant", -apple-system, system-ui,
+    "Segoe UI", Helvetica, Arial, "Helvetica Neue", sans-serif,
+    var(--pico-font-family-emoji);
+}
 
 body {
   > main {
     max-width: 700px;
+  }
+}
 
-    > details {
-      display: inline-block;
-      max-width: 100%;
-      border: solid var(--pico-muted-border-color) var(--pico-border-width);
-      border-radius: var(--pico-border-radius);
-      border-left-width: calc(4 * var(--pico-border-width));
-      padding: calc(var(--pico-spacing) * 0.5);
-      box-shadow: 0 0 0.25rem var(--pico-muted-border-color);
+details {
+  display: inline-block;
+  max-width: 100%;
+  border: solid var(--pico-muted-border-color) var(--pico-border-width);
+  border-radius: var(--pico-border-radius);
+  border-left-width: calc(4 * var(--pico-border-width));
+  padding: calc(var(--pico-spacing) * 0.5);
+  box-shadow: 0 0 0.1rem var(--pico-muted-border-color);
+}
+
+blockquote {
+  border-radius: calc(var(--pico-border-radius) * 2);
+  border-bottom: solid var(--pico-muted-border-color)
+    calc(var(--pico-border-width));
+  box-shadow: 0 0 0.1rem var(--pico-muted-border-color);
+  border-color: #029ae8;
+
+  > p {
+    margin: 0;
+  }
+}
+
+figure {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 75%;
+
+  > figcaption {
+    color: var(--pico-muted-color);
+  }
+
+  > img {
+    box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
+    border-radius: calc(var(--pico-border-radius) * 2);
+  }
+}
+
+pre > code {
+  border: solid var(--pico-muted-border-color)
+    calc(4 * var(--pico-border-width));
+  overflow: auto;
+}
+
+span.katex-display {
+  overflow-x: auto;
+}
+
+p.hint {
+  box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
+  border: solid var(--pico-muted-border-color)
+    calc(1.5 * var(--pico-border-width));
+  border-radius: calc(var(--pico-border-radius) * 2);
+  border-left-width: calc(6 * var(--pico-border-width));
+  padding: calc(0.5 * var(--pico-spacing)) var(--pico-spacing);
+}
+
+p.hint.tip {
+  border-color: #00a66e;
+}
+
+p.hint.warn {
+  border-color: #ffbf00;
+}
+
+p.hint.error {
+  border-color: #f45d2c;
+}
+
+section.toc {
+  position: sticky;
+  top: 0;
+  margin-bottom: calc(2 * var(--pico-typography-spacing-vertical));
+  z-index: 10;
+
+  > details.toc-details {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: block;
+    max-width: 100%;
+    border: solid var(--pico-muted-border-color) var(--pico-border-width);
+    border-radius: var(--pico-border-radius);
+    border-left-width: calc(4 * var(--pico-border-width));
+    padding: calc(var(--pico-spacing) * 0.5);
+    box-shadow: 0 0 0.25rem var(--pico-muted-border-color);
+
+    > summary.toc-summary {
+      font-weight: bold;
     }
 
-    > section.footnotes {
-      margin-bottom: 0;
-      border-top: solid var(--pico-muted-border-color) var(--pico-border-width);
-      padding: var(--pico-typography-spacing-vertical);
-    }
-
-    > section.toc {
-      position: sticky;
-      top: 0;
-      margin-bottom: calc(2 * var(--pico-typography-spacing-vertical));
-      z-index: 10;
-
-      > details.toc-details {
-        background-color: rgba(255, 255, 255, 0.9);
-        display: block;
-        max-width: 100%;
-        border: solid var(--pico-muted-border-color) var(--pico-border-width);
-        border-radius: var(--pico-border-radius);
-        border-left-width: calc(4 * var(--pico-border-width));
-        padding: calc(var(--pico-spacing) * 0.5);
-        box-shadow: 0 0 0.25rem var(--pico-muted-border-color);
-
-        a.toc-link {
-          text-decoration: none;
-        }
-      }
-    }
-
-    > figure {
-      text-align: center;
-      margin: 0 auto;
-      max-width: 75%;
-
-      > figcaption {
-        color: var(--pico-muted-color);
-      }
-    }
-
-    blockquote {
-      border-radius: calc(var(--pico-border-radius) * 2);
-      border-bottom: solid var(--pico-muted-border-color)
-        calc(var(--pico-border-width));
-      box-shadow: 0 0 0.1rem var(--pico-muted-border-color);
-      border-color: #029ae8;
-
-      > p {
-        margin: 0;
-      }
-    }
-
-    > pre > code {
-      border: solid var(--pico-muted-border-color)
-        calc(4 * var(--pico-border-width));
-      overflow: auto;
-    }
-
-    > figure > img {
-      box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
-      border-radius: calc(var(--pico-border-radius) * 2);
-    }
-
-    > p.hint {
-      box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
-      border: solid var(--pico-muted-border-color)
-        calc(1.5 * var(--pico-border-width));
-      border-radius: calc(var(--pico-border-radius) * 2);
-      border-left-width: calc(6 * var(--pico-border-width));
-      padding: var(--pico-spacing);
-    }
-
-    > p.hint.tip {
-      border-color: #00a66e;
-      /* background-color: #e9f2fc; */
-    }
-
-    > p.hint.warn {
-      border-color: #ffbf00;
-      /* background-color: #fcefd9; */
-    }
-
-    > p.hint.error {
-      border-color: #f45d2c;
-      /* background-color: #faeeea; */
-    }
-
-    > span.katex-display {
-      overflow-x: auto;
+    a.toc-link {
+      text-decoration: none;
     }
   }
+}
+
+section.footnotes {
+  margin-bottom: 0;
+  border-top: solid var(--pico-muted-border-color) var(--pico-border-width);
+  padding: var(--pico-typography-spacing-vertical);
 }

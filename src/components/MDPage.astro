@@ -36,12 +36,15 @@ const { title, description, date, updated, area } = frontmatter;
       vertical-align: middle;
       align-items: center;
       color: var(--pico-muted-color);
-      font-size: calc(var(--pico-font-size) * 0.6);
 
       > div {
-        margin-right: calc(0.75 * var(--pico-spacing));
+        display: inline-flex;
+        vertical-align: middle;
+        align-items: center;
+        margin-right: calc(0.7 * var(--pico-spacing));
+        font-size: calc(var(--pico-font-size) * 0.6);
 
-        > span {
+        > span.date {
           display: inline-block;
           border: solid var(--pico-muted-border-color) var(--pico-border-width);
           border-radius: calc(1.5 * var(--pico-border-radius));
@@ -67,9 +70,11 @@ const { title, description, date, updated, area } = frontmatter;
               <>
                 <FontAwesomeIcon
                   icon={faCalendarDay}
-                  color="var(--pico-muted-color)"
-                />{" "}
-                <span>
+                  style={{
+                    marginRight: "calc(0.25 * var(--pico-spacing))",
+                  }}
+                />
+                <span class="date">
                   <Date date={updated || date} />
                 </span>
               </>
@@ -77,8 +82,15 @@ const { title, description, date, updated, area } = frontmatter;
           }
         </div>
         <div>
-          <FontAwesomeIcon icon={faTag} color="var(--pico-muted-color)" />{" "}
-          <Area {area} />
+          <FontAwesomeIcon
+            icon={faTag}
+            style={{
+              marginRight: "calc(0.25 * var(--pico-spacing))",
+            }}
+          />
+          <div>
+            <Area {area} />
+          </div>
         </div>
       </div>
     </section>
