@@ -1,0 +1,33 @@
+---
+import Html from "@components/Html.astro";
+
+import "@styles/search.css";
+
+const frontmatter = {
+  title: "Search",
+  authors: [{ collection: "authors", id: "sk" }],
+  date: new Date(),
+};
+
+export const prerender = true;
+---
+
+<Html frontmatter={frontmatter}>
+  <link href="/search/pagefind/pagefind-ui.css" rel="stylesheet" slot="head" />
+  <script is:inline src="/search/pagefind/pagefind-ui.js" slot="head"></script>
+  <script slot="head">
+    window.addEventListener("DOMContentLoaded", (_) => {
+      new PagefindUI({
+        baseUrl: "/",
+        element: "#search",
+        showSubResults: true,
+      });
+    });
+  </script>
+  <main>
+    <section>
+      <h1>Search</h1>
+      <div id="search"></div>
+    </section>
+  </main>
+</Html>

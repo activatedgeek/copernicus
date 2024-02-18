@@ -24,6 +24,7 @@
     "astro": "^4.3.5",
     "github-slugger": "^2.0.0",
     "node-emoji": "^2.1.3",
+    "pagefind": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-external-links": "^3.0.0",

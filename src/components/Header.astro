@@ -1,6 +1,6 @@
 ---
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain } from "@fortawesome/free-solid-svg-icons";
+import { faBrain, faSearch } from "@fortawesome/free-solid-svg-icons";
 ---
 
 <style>
@@ -11,7 +11,7 @@ import { faBrain } from "@fortawesome/free-solid-svg-icons";
   }
 </style>
 
-<header>
+<header data-pagefind-ignore>
   <nav>
     <ul>
       <li>
@@ -21,6 +21,11 @@ import { faBrain } from "@fortawesome/free-solid-svg-icons";
       </li>
     </ul>
     <ul>
+      <li>
+        <a title="Search" href="/search"
+          ><FontAwesomeIcon icon={faSearch} color="var(--pico-primary)" /> Search</a
+        >
+      </li>
       <li>
         <a title="Knowledge Base" href="/kb"
           ><FontAwesomeIcon icon={faBrain} color="var(--pico-primary)" /> KB</a

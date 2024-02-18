@@ -53,6 +53,9 @@ jobs:
       - name: Rename Cloudflare Pages Redirect
         run: mv dist/redirects dist/_redirects
 
+      - name: Setup Search Index
+        run: npx pagefind
+
       - name: Upload Pages Artifact
         uses: actions/upload-artifact@v4
         with:

@@ -1,0 +1,14 @@
+form.pagefind-ui__form {
+  display: flex;
+  flex-direction: column;
+}
+
+p.pagefind-ui__message {
+  color: var(--pico-muted-color);
+}
+
+div.pagefind-ui__results-area {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
