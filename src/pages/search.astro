@@ -1,8 +1,6 @@
 ---
 import Html from "@components/Html.astro";
 
-import "@styles/search.css";
-
 const frontmatter = {
   title: "Search",
   authors: [{ collection: "authors", id: "sk" }],
@@ -11,6 +9,25 @@ const frontmatter = {
 
 export const prerender = true;
 ---
+
+<style>
+  #search {
+    form.pagefind-ui__form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    p.pagefind-ui__message {
+      color: var(--pico-muted-color);
+    }
+
+    div.pagefind-ui__results-area {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+</style>
 
 <Html frontmatter={frontmatter}>
   <link href="/search/pagefind/pagefind-ui.css" rel="stylesheet" slot="head" />

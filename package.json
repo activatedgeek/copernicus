@@ -7,6 +7,7 @@
     "pretty": "prettier --write .",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "npx pagefind",
     "preview": "astro preview",
     "astro": "astro"
   },
