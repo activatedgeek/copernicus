@@ -53,11 +53,11 @@ jobs:
       - name: Rename Cloudflare Pages Redirect
         run: mv dist/redirects dist/_redirects
 
-      - name: Upload Pages Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: pages
-          path: dist
+      # - name: Upload Pages Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: pages
+      #     path: dist
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1

@@ -114,5 +114,5 @@ export default defineConfig({
   ],
   output: "server",
   adapter: cloudflare(),
-  site: `https://${process.env.ASTRO_SITE || "http://copernicus.local"}`,
+  site: `https://${process.env.ASTRO_SITE || "copernicus.local"}`,
 });
