@@ -1,6 +1,6 @@
 ---
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { IoSearch } from "react-icons/io5";
+import { PiTreeBold } from "react-icons/pi";
 ---
 
 <style>
@@ -8,6 +8,16 @@ import { faBrain, faSearch } from "@fortawesome/free-solid-svg-icons";
     padding: 0 var(--pico-typography-spacing-vertical);
     border-bottom: solid var(--pico-muted-border-color)
       calc(3 * var(--pico-border-width));
+  }
+
+  a {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+
+    > span {
+      margin-left: calc(var(--pico-spacing) * 0.5);
+    }
   }
 </style>
 
@@ -22,14 +32,16 @@ import { faBrain, faSearch } from "@fortawesome/free-solid-svg-icons";
     </ul>
     <ul>
       <li>
-        <a title="Search" href="/search"
-          ><FontAwesomeIcon icon={faSearch} color="var(--pico-primary)" /> Search</a
-        >
+        <a title="Search" href="/search">
+          <IoSearch color="var(--pico-primary)" />
+          <span>Search</span>
+        </a>
       </li>
       <li>
-        <a title="Knowledge Base" href="/kb"
-          ><FontAwesomeIcon icon={faBrain} color="var(--pico-primary)" /> KB</a
-        >
+        <a title="Knowledge Base" href="/kb">
+          <PiTreeBold color="var(--pico-primary)" />
+          <span>KB</span>
+        </a>
       </li>
     </ul>
   </nav>

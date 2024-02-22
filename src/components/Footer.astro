@@ -1,19 +1,15 @@
 ---
 import { getEntry } from "astro:content";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SiGooglescholar, SiSemanticscholar } from "react-icons/si";
 import {
-  faUserGraduate,
-  faGraduationCap,
-  faArchive,
-  faRss,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-  faStackOverflow,
-  faXTwitter,
-  faHackerNewsSquare,
-} from "@fortawesome/free-brands-svg-icons";
+  FaGithub,
+  FaHackerNews,
+  FaLinkedin,
+  FaStackOverflow,
+  FaRssSquare,
+  FaDatabase,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 import { getSocialItem } from "@lib/collections";
 
@@ -64,8 +60,9 @@ const {
           href={(await getSocialItem("scholar")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faGraduationCap} color="#4d90fe" /></a
         >
+          <SiGooglescholar color="#4d90fe" />
+        </a>
       </li>
       <li>
         <a
@@ -73,8 +70,9 @@ const {
           href={(await getSocialItem("sscholar")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faUserGraduate} color="#f4d35e" /></a
         >
+          <SiSemanticscholar color="#f4d35e" />
+        </a>
       </li>
       <li>
         <a
@@ -82,8 +80,9 @@ const {
           href={(await getSocialItem("gh")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faGithub} color="#24292f" /></a
         >
+          <FaGithub color="#24292f" />
+        </a>
       </li>
       <li>
         <a
@@ -91,8 +90,9 @@ const {
           href={(await getSocialItem("hn")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faHackerNewsSquare} color="#ff6600" /></a
         >
+          <FaHackerNews color="#ff6600" />
+        </a>
       </li>
       <li>
         <a
@@ -100,8 +100,9 @@ const {
           href={(await getSocialItem("lnkd")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faLinkedin} color="#0a66c2" /></a
         >
+          <FaLinkedin color="#0a66c2" />
+        </a>
       </li>
       <li>
         <a
@@ -109,8 +110,9 @@ const {
           href={(await getSocialItem("so")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faStackOverflow} color="#f48225" /></a
         >
+          <FaStackOverflow color="#f48225" />
+        </a>
       </li>
       <li>
         <a
@@ -118,17 +120,18 @@ const {
           href={(await getSocialItem("twtr")).url}
           target="_blank"
           rel="noopener noreferrer"
-          ><FontAwesomeIcon icon={faXTwitter} color="#0f1419" /></a
         >
-      </li>
-      <li>
-        <a title="RSS" href="/rss.xml">
-          <FontAwesomeIcon icon={faRss} color="#e26522" />
+          <FaXTwitter color="#0f1419" />
         </a>
       </li>
       <li>
         <a title="Archive" href="/archive">
-          <FontAwesomeIcon icon={faArchive} color="#959082" />
+          <FaDatabase color="#959082" />
+        </a>
+      </li>
+      <li>
+        <a title="RSS" href="/rss.xml">
+          <FaRssSquare color="#e26522" />
         </a>
       </li>
     </ul>

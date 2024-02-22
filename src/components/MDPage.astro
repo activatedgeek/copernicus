@@ -1,6 +1,5 @@
 ---
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDay, faTag } from "@fortawesome/free-solid-svg-icons";
+import { FaCalendarDay, FaTag } from "react-icons/fa";
 
 import Html from "@components/Html.astro";
 import Date from "@components/Date.astro";
@@ -68,8 +67,7 @@ const { title, description, date, updated, area } = frontmatter;
           {
             updated || date ? (
               <>
-                <FontAwesomeIcon
-                  icon={faCalendarDay}
+                <FaCalendarDay
                   style={{
                     marginRight: "calc(0.25 * var(--pico-spacing))",
                   }}
@@ -82,8 +80,7 @@ const { title, description, date, updated, area } = frontmatter;
           }
         </div>
         <div>
-          <FontAwesomeIcon
-            icon={faTag}
+          <FaTag
             style={{
               marginRight: "calc(0.25 * var(--pico-spacing))",
             }}
