@@ -18,13 +18,14 @@ const allPages = (
       params: { slug },
       props: {
         page: {
-          data: { title, date, updated, area, unlisted },
+          data: { title, description, date, updated, area, unlisted },
         },
       },
     }) => ({
       area,
       slug,
       title,
+      description,
       updated: updated || date,
       unlisted,
     }),
@@ -73,13 +74,15 @@ const allPages = (
 
 <section data-pagefind-ignore>
   {
-    allPages.map(({ slug, title, updated, area }) => (
+    allPages.map(({ slug, title, description, updated, area }) => (
       <>
         <div class="date">
           <Date date={updated} format="bY" />
         </div>
         <div>
-          <a href={`/${collection}/${slug}`}>{title}</a>
+          <a title={description} href={`/${collection}/${slug}`}>
+            {title}
+          </a>
           <div class="area">
             <Area area={area} />
           </div>

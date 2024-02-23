@@ -17,22 +17,29 @@ const {
   a:hover,
   a:active {
     text-decoration: none;
-    color: inherit;
   }
 
   a {
     display: inline-block;
+    padding: calc(0.1 * var(--pico-spacing)) calc(0.4 * var(--pico-spacing));
     border-style: solid;
     border-width: var(--pico-border-width);
     border-radius: calc(1.5 * var(--pico-border-radius));
-    padding: calc(0.1 * var(--pico-spacing)) calc(0.4 * var(--pico-spacing));
+    border-color: var(--area-border-color);
+    background-color: var(--area-background-color);
+    color: var(--area-border-color);
+    transition: 0.25s;
+  }
+
+  a:hover {
+    box-shadow: 0 0.1rem 0.3rem var(--pico-muted-border-color);
   }
 </style>
 
 <a
   title={`Overview Page for area "${label}"`}
   href={`/overview/${id}`}
-  style={{ backgroundColor, borderColor }}
+  style={`--area-background-color: ${backgroundColor}; --area-border-color: ${borderColor};`}
 >
   {nodeEmoji.get(emoji)}
   {id}
