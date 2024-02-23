@@ -14,6 +14,16 @@ body {
   }
 }
 
+body:after {
+  content: "";
+  height: 33vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #fbfbf8 75%, #fff 100%);
+}
+
 details {
   display: inline-block;
   max-width: 100%;
