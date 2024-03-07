@@ -7,7 +7,7 @@ import Footer from "./Footer.astro";
 import "@styles/main.css";
 
 const {
-  frontmatter: { title, description, date, updated, keywords, authors },
+  frontmatter: { title, description, area, date, updated, keywords, authors },
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, import.meta.env.SITE);
@@ -19,6 +19,10 @@ const authorsList = await Promise.all(
 const {
   data: { name: siteAuthorName },
 } = await getEntry("authors", "sk");
+
+const {
+  data: { backgroundColor: themeColor },
+} = await getEntry(area.collection, area.id);
 ---
 
 <html lang="en">
@@ -32,6 +36,7 @@ const {
     <link rel="canonical" href={canonicalURL.href} />
 
     <title>{title} | {siteAuthorName}</title>
+    <meta name="theme-color" content={themeColor} />
     <meta name="description" content={description} />
     {
       authorsList.map(({ data: { name, url } }) => (
@@ -81,7 +86,7 @@ const {
     <slot name="head" />
   </head>
   <body>
-    <Header />
+    <Header area={area} />
     <slot />
     <Footer />
   </body>

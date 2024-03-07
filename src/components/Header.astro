@@ -1,6 +1,13 @@
 ---
+import { getEntry } from "astro:content";
 import { IoSearch } from "react-icons/io5";
 import { PiTreeBold } from "react-icons/pi";
+
+const { area } = Astro.props;
+
+const {
+  data: { backgroundColor },
+} = await getEntry(area.collection, area.id);
 ---
 
 <style>
@@ -17,8 +24,19 @@ import { PiTreeBold } from "react-icons/pi";
       margin-left: calc(var(--pico-spacing) * 0.5);
     }
   }
+
+  div.area-identifier {
+    width: 100vw;
+    height: calc(7 * var(--pico-border-width));
+    background-color: var(--area-background-color);
+  }
 </style>
 
+<div
+  class="area-identifier"
+  style={`--area-background-color: ${backgroundColor};`}
+>
+</div>
 <header data-pagefind-ignore>
   <nav>
     <ul>
