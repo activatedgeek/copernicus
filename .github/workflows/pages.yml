@@ -3,7 +3,9 @@ name: Cloudflare Pages
 on:
   schedule:
     - cron: "0 12 * * *"
-  push: []
+  push:
+    branches:
+      - main
 
 env:
   ASTRO_SITE: ${{ vars.ASTRO_SITE }}
