@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import { processCollectionItem } from "@lib/collections";
 
-const allRedirects = (
+const kbRedirects = (
   await Promise.all((await getCollection("kb")).map(processCollectionItem))
 )
   .map(
@@ -25,12 +25,17 @@ const allRedirects = (
   )
   .flat();
 
+const manualRedirects = [["/cv", "/cv.pdf"]];
+
+const allRedirects = [...kbRedirects, ...manualRedirects];
+
 const redirectsTxt = allRedirects
   .map((r) => [...r, "301"].join(" "))
   .join("\n");
 
 export const prerender = true;
 
+// Cloudflare Pages redirects https://developers.cloudflare.com/pages/configuration/redirects/
 export const GET: APIRoute = () => {
   return new Response(redirectsTxt, {
     headers: {
