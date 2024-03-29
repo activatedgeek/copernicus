@@ -75,6 +75,8 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_FOOTER: ''
+          SLACK_COLOR: ${{ job.status }}
+        if: always()
 
   # deploy:
   #   needs: build
