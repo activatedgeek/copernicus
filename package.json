@@ -22,7 +22,7 @@
     "@types/react-dom": "^18.2.23",
     "astro": "^4.5.12",
     "autoprefixer": "^10.4.19",
-    "cssnano": "^6.1.1",
+    "cssnano": "^6.1.2",
     "github-slugger": "^2.0.0",
     "node-emoji": "^2.1.3",
     "pagefind": "^1.0.4",
