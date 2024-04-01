@@ -19,7 +19,7 @@
     "@astrojs/sitemap": "^3.1.2",
     "@picocss/pico": "^2.0.6",
     "@types/react": "^18.2.69",
-    "@types/react-dom": "^18.2.22",
+    "@types/react-dom": "^18.2.23",
     "astro": "^4.5.12",
     "autoprefixer": "^10.4.19",
     "cssnano": "^6.1.1",
