@@ -1,14 +1,11 @@
 import { defineConfig } from "astro/config";
-
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-
 import remarkEmoji from "remark-emoji";
 import remarkHint from "remark-hint";
 import remarkMath from "remark-math";
-
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeFigure from "rehype-figure";
 import rehypeKatex from "rehype-katex";
@@ -19,6 +16,9 @@ export default defineConfig({
   vite: {
     resolve: {
       preserveSymlinks: true,
+    },
+    ssr: {
+      external: ["node:buffer"],
     },
   },
   markdown: {
@@ -113,6 +113,8 @@ export default defineConfig({
     }),
   ],
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "passthrough",
+  }),
   site: `https://${process.env.ASTRO_SITE || "copernicus.local"}`,
 });
