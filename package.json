@@ -1,12 +1,12 @@
 {
   "name": "copernicus",
   "type": "module",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "scripts": {
     "dev": "astro dev",
     "pretty": "prettier --write .",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && mv dist/redirects dist/_redirects",
     "postbuild": "npx pagefind",
     "preview": "astro preview",
     "astro": "astro"

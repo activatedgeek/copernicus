@@ -15,11 +15,8 @@ env:
   ADBLOCK: 1
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,24 +47,35 @@ jobs:
       - name: Build copernicus
         run: npm run build
 
-      # https://developers.cloudflare.com/pages/configuration/redirects/
-      - name: Rename Cloudflare Pages Redirect
-        run: mv dist/redirects dist/_redirects
+      - name: Upload Pages Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages
+          path: dist
+          retention-days: 1
 
-      # - name: Upload Pages Artifact
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: pages
-      #     path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Download Pages Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pages
+          path: dist
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
+          wranglerVersion: 3
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
           directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Slack Notify
         uses: rtCamp/action-slack-notify@v2
@@ -76,16 +84,3 @@ jobs:
           SLACK_FOOTER: ""
           SLACK_COLOR: ${{ job.status }}
         if: always()
-
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     contents: read
-  #     deployments: write
-  #   steps:
-  #     - name: Download Pages Artifact
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: pages
-  #         path: dist
