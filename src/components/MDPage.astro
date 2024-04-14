@@ -4,6 +4,7 @@ import { FaCalendarDay, FaTag } from "react-icons/fa";
 import Html from "@components/Html.astro";
 import Date from "@components/Date.astro";
 import Area from "@components/Area.astro";
+import Giscus from "@components/Giscus.astro";
 
 import "@styles/katex.css";
 
@@ -11,14 +12,12 @@ const { page } = Astro.props;
 const { data: frontmatter } = page;
 const { Content } = await page.render();
 
-const { title, description, date, updated, area } = frontmatter;
+const { title, description, date, updated, area, comments } = frontmatter;
 ---
 
 <style>
   section {
     padding-bottom: calc(0.5 * var(--pico-spacing));
-    border-bottom: solid var(--pico-muted-border-color)
-      calc(1.5 * var(--pico-border-width));
 
     > h1 {
       margin-bottom: calc(0.25 * var(--pico-typography-spacing-vertical));
@@ -93,5 +92,8 @@ const { title, description, date, updated, area } = frontmatter;
     </section>
     <Content />
     <slot />
+    <section>
+      {comments ? <Giscus /> : null}
+    </section>
   </main>
 </Html>

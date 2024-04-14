@@ -20,7 +20,16 @@ npm install
 
 Optional:
 
+#### Analytics
+
 - `GOATCOUNTER_SITE`: [GoatCounter](https://www.goatcounter.com) domain analytics. e.g. `<code>.goatcounter.com`
+
+#### Comments
+
+- `GISCUS_REPO`: [Giscus](https://giscus.app) public GitHub repository name.
+- `GISCUS_REPO_ID`: [Giscus](https://giscus.app) repository ID.
+- `GISCUS_CATEGORY`: [Giscus](https://giscus.app) discussion category name.
+- `GISCUS_CATEGORY_ID`: [Giscus](https://giscus.app) discussion category ID.
 
 ### Content
 

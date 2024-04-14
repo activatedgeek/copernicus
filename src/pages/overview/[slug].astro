@@ -21,6 +21,7 @@ const {
     area: { id },
   },
 } = page;
+page.data = { ...page.data, comments: false };
 ---
 
 <MDPage page={page}>

@@ -1,8 +1,9 @@
 ---
 import { getEntry } from "astro:content";
 
-import Header from "./Header.astro";
-import Footer from "./Footer.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Goatcounter from "./Goatcounter.astro";
 
 import "@styles/main.css";
 
@@ -34,6 +35,7 @@ const {
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalURL.href} />
+    <meta name="giscus:backlink" content={canonicalURL.href} />
 
     <title>{title} | {siteAuthorName}</title>
     <meta name="theme-color" content={themeColor} />
@@ -72,16 +74,7 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    {
-      import.meta.env.GOATCOUNTER_SITE ? (
-        <script
-          is:inline
-          data-goatcounter={`https://${import.meta.env.GOATCOUNTER_SITE}/count`}
-          async
-          src="//gc.zgo.at/count.js"
-        />
-      ) : null
-    }
+    <Goatcounter />
 
     <slot name="head" />
   </head>

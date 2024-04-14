@@ -31,6 +31,7 @@ const kb = defineCollection({
     keywords: z.array(z.string()).optional().default([]),
     authors: z.array(reference("authors")).optional().default(["sk"]),
     unlisted: z.boolean().default(false),
+    comments: z.boolean().default(true),
   }),
 });
 

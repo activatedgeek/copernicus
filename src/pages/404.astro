@@ -10,7 +10,7 @@ export const prerender = true;
 const {
   props: { page },
 } = await processCollectionItem(await getEntry("kb", "meta/404"));
-page.data.date = new Date();
+page.data = { ...page.data, date: new Date(), comments: false };
 ---
 
 <MDPage page={page}>

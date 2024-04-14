@@ -1,0 +1,13 @@
+---
+const goatcounterSite = import.meta.env.GOATCOUNTER_SITE;
+---
+
+{
+  goatcounterSite ? (
+    <script
+      src="//gc.zgo.at/count.js"
+      data-goatcounter={`https://${goatcounterSite}/count`}
+      async
+    />
+  ) : null
+}

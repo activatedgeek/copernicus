@@ -1,0 +1,23 @@
+---
+const repo = import.meta.env.GISCUS_REPO;
+const repoId = import.meta.env.GISCUS_REPO_ID;
+const category = import.meta.env.GISCUSS_CATEGORY;
+const categoryId = import.meta.env.GISCUSS_CATEGORY_ID;
+---
+
+<script
+  src="https://giscus.app/client.js"
+  data-repo={repo}
+  data-repo-id={repoId}
+  data-category={category}
+  data-category-id={categoryId}
+  data-mapping="title"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="noborder_light"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async></script>
