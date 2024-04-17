@@ -10,6 +10,7 @@ export const prerender = true;
 const {
   props: { page },
 } = await processCollectionItem(await getEntry("notes", "meta/home"));
+page.data = { ...page.data, comments: false };
 ---
 
 <MDPage page={page}>
