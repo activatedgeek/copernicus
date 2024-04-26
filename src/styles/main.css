@@ -96,7 +96,6 @@ section.toc {
     border-radius: var(--pico-border-radius);
     border-left-width: calc(4 * var(--pico-border-width));
     padding: calc(var(--pico-spacing) * 0.5);
-    box-shadow: 0 0 0.25rem var(--pico-muted-border-color);
 
     > summary.toc-summary {
       font-weight: bold;
@@ -112,4 +111,8 @@ section.footnotes {
   margin-bottom: 0;
   border-top: solid var(--pico-muted-border-color) var(--pico-border-width);
   padding: var(--pico-typography-spacing-vertical);
+
+  > h2#footnote-label {
+    font-size: calc(0.7 * var(--pico-font-size));
+  }
 }
