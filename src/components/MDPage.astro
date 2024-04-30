@@ -94,8 +94,12 @@ const { title, description, date, updated, area, comments } = frontmatter;
     </section>
     <Content />
     <slot />
-    <section>
-      {comments ? <Giscus /> : null}
-    </section>
+    {
+      comments ? (
+        <section>
+          <Giscus />
+        </section>
+      ) : null
+    }
   </main>
 </Html>
