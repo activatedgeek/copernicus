@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
+page.data = { ...page.data, comments: false };
 ---
 
 <MDPage page={page} />

@@ -9,18 +9,19 @@
     "build": "astro build && mv dist/redirects dist/_redirects",
     "postbuild": "npx pagefind",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "ncu": "ncu"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^10.3.0",
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/react": "^3.5.0",
+    "@astrojs/cloudflare": "^10.4.1",
+    "@astrojs/mdx": "^3.1.1",
+    "@astrojs/react": "^3.6.0",
     "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.5",
+    "@astrojs/sitemap": "^3.1.6",
     "@picocss/pico": "^2.0.6",
-    "astro": "^4.10.1",
+    "astro": "^4.10.3",
     "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.2",
+    "cssnano": "^7.0.3",
     "github-slugger": "^2.0.0",
     "node-emoji": "^2.1.3",
     "pagefind": "^1.1.0",
@@ -39,7 +40,8 @@
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "prettier": "^3.3.1",
+    "npm-check-updates": "^16.14.20",
+    "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0"
   }
 }
