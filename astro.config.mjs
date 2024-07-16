@@ -108,9 +108,7 @@ export default defineConfig({
   integrations: [
     react(),
     mdx(),
-    sitemap({
-      filter: (page) => !page.includes("/notes"),
-    }),
+    sitemap(),
   ],
   output: "server",
   adapter: cloudflare({

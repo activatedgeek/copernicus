@@ -46,7 +46,6 @@ export const collections = {
   areas,
   authors,
   kb,
-  notes: kb,
   overview: kb,
   social,
 };

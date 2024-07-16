@@ -31,10 +31,6 @@ Optional:
 - `GISCUS_CATEGORY`: [Giscus](https://giscus.app) discussion category name.
 - `GISCUS_CATEGORY_ID`: [Giscus](https://giscus.app) discussion category ID.
 
-### Content
-
-All Markdown content must be placed in [`src/content`](./src/content/) under folders. The frontmatter schema is in [`src/content/config.ts`](./src/content/config.ts).
-
 ## Build
 
 ### Development
