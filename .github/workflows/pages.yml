@@ -70,10 +70,9 @@ jobs:
           projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
           directory: dist
 
-      - name: Slack Notify
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_FOOTER: ""
-          SLACK_COLOR: ${{ job.status }}
+      - name: Discord Notify
+        uses: sarisia/actions-status-discord@v1
         if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          username: copernicus
