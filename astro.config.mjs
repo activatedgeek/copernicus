@@ -105,11 +105,7 @@ export default defineConfig({
       ],
     ],
   },
-  integrations: [
-    react(),
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [react(), mdx(), sitemap()],
   output: "server",
   adapter: cloudflare({
     imageService: "passthrough",

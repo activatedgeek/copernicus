@@ -13,8 +13,6 @@ import { FaXTwitter } from "react-icons/fa6";
 
 import { getSocialItem } from "@lib/collections";
 
-const siteURL = new URL(import.meta.env.SITE);
-
 const {
   data: { name },
 } = await getEntry("authors", "sk");
@@ -58,6 +56,18 @@ const {
       <li class="copyright">
         &copy; {new Date().getFullYear()}
         {name}
+      </li>
+      <li>
+        <a
+          href={import.meta.env.STATUS_PAGE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://img.shields.io/badge/Status-blue?style=flat&logo=cloudflarepages&logoSize=auto&labelColor=white"
+            alt="Status Badge"
+          />
+        </a>
       </li>
     </ul>
   </nav>
@@ -141,18 +151,6 @@ const {
       <li>
         <a title="RSS" href="/rss.xml">
           <FaRssSquare color="#e26522" />
-        </a>
-      </li>
-      <li>
-        <a
-          href={`https://status.${siteURL.host}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://uptime.betterstack.com/status-badges/v3/monitor/13rvh.svg"
-            alt="Better Stack Badge"
-          />
         </a>
       </li>
     </ul>

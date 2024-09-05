@@ -1,6 +1,6 @@
 # Copernicus
 
-[![Deploy](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml/badge.svg)](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml) [![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/13rvh.svg)](https://status.sanyamkapoor.com/?utm_source=status_badge)
+[![Deploy](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml/badge.svg)](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml) [![Better Stack Badge](https://img.shields.io/badge/Status-blue?style=flat&logo=cloudflarepages&logoSize=auto&labelColor=white)](https://stats.uptimerobot.com/OyN8CNviYm)
 
 Base framework to generate my website based on [Astro](https://astro.build).
 Website & knowledge base hosted at [sanyamkapoor.com](https://sanyamkapoor.com).
@@ -19,6 +19,8 @@ npm install
 - `ASTRO_SITE`: Full base domain, e.g. `sanyamkapoor.com`
 
 Optional:
+
+- `STATUS_PAGE_URL`: URL for the status page.
 
 #### Analytics
 
