@@ -2,7 +2,7 @@
 title: The Stack
 description: Tools powering this website.
 date: Jun 19 2020, 14:32 -0700
-updated: Apr 25 2024, 19:58 -0400
+updated: Sep 16 2025, 9:05 -0400
 area: meta
 ---
 
@@ -21,7 +21,7 @@ Images are hosted on [Imgur](https://imgur.com).
 
 Continuous integration is supported by [Github Actions](https://github.com/features/actions).
 Website is deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
-Uptime is monitored via [Better Stack](https://betterstack.com).
+Uptime is monitored via [Upptime](https://upptime.js.org).
 Domain registrar is [Namecheap](https://namecheap.com).
 Nameservers are hosted on [Cloudflare](https://www.cloudflare.com).
 

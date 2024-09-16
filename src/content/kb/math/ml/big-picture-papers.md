@@ -12,8 +12,7 @@ area: math
 
 [46656 Varieties of Bayesians](http://fitelson.org/probability/good_bayes.pdf)
 
-[Tensor Product Variable Binding and the Representation of Symbolic
-Structures in Connectionist Systems](https://www.microsoft.com/en-us/research/publication/tensor-product-variable-binding-representation-symbolic-structures-connectionist-systems/) (1990)
+[Tensor Product Variable Binding and the Representation of Symbolic Structures in Connectionist Systems](https://www.microsoft.com/en-us/research/publication/tensor-product-variable-binding-representation-symbolic-structures-connectionist-systems/) (1990)
 
 [Intelligence Without Representation](https://www.sciencedirect.com/science/article/pii/000437029190053M) (1991)
 

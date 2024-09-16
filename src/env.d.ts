@@ -3,7 +3,13 @@
 
 interface ImportMetaEnv {
   readonly ASTRO_SITE: string;
-  readonly STATUS_PAGE_URL: string;
+  readonly GISCUS_REPO: string;
+  readonly GISCUS_REPO_ID: string;
+  readonly GISCUSS_CATEGORY: string;
+  readonly GISCUSS_CATEGORY_ID: string;
+  readonly GOATCOUNTER_SITE: string;
+  readonly STATUS_SITE: string;
+  readonly STATUS_SITE_ICON: string;
 }
 
 interface ImportMeta {

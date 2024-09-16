@@ -57,18 +57,6 @@ const {
         &copy; {new Date().getFullYear()}
         {name}
       </li>
-      <li>
-        <a
-          href={import.meta.env.STATUS_PAGE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://img.shields.io/badge/Status-blue?style=flat&logo=cloudflarepages&logoSize=auto&labelColor=white"
-            alt="Status Badge"
-          />
-        </a>
-      </li>
     </ul>
   </nav>
   <nav>
@@ -155,4 +143,24 @@ const {
       </li>
     </ul>
   </nav>
+  {
+    import.meta.env.STATUS_SITE ? (
+      <nav>
+        <ul>
+          <li>
+            <a
+              href={`https://${import.meta.env.STATUS_SITE}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt="7-day response time 180"
+                src={import.meta.env.STATUS_SITE_ICON}
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    ) : null
+  }
 </footer>

@@ -1,6 +1,6 @@
 # Copernicus
 
-[![Deploy](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml/badge.svg)](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml) [![Better Stack Badge](https://img.shields.io/badge/Status-blue?style=flat&logo=cloudflarepages&logoSize=auto&labelColor=white)](https://stats.uptimerobot.com/OyN8CNviYm)
+[![Deploy](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml/badge.svg)](https://github.com/activatedgeek/copernicus/actions/workflows/pages.yml) [![Upptime Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Factivatedgeek%2Fstatus%2FHEAD%2Fapi%2Fwebsite%2Fresponse-time-week.json)](https://status.sanyamkapoor.com)
 
 Base framework to generate my website based on [Astro](https://astro.build).
 Website & knowledge base hosted at [sanyamkapoor.com](https://sanyamkapoor.com).
@@ -20,7 +20,8 @@ npm install
 
 Optional:
 
-- `STATUS_PAGE_URL`: URL for the status page.
+- `STATUS_SITE`: Full base domain for the status page. e.g. `status.sanyamkapoor.com`.
+- `STATUS_SITE_ICON`: Icon to link to the status site.
 
 #### Analytics
 

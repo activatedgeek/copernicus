@@ -2,7 +2,7 @@
 title: Subscriptions and Services
 description: Recommendations.
 date: Jan 8 2021, 13:29 +0530
-updated: Apr 8 2024, 22:45 -0400
+updated: Sep 16 2025, 9:16 -0400
 area: tech
 ---
 
@@ -12,7 +12,7 @@ These are some of the subscriptions & services I use(d), and recommend.
 
 - Domain Registrar: [Cloudflare](https://www.cloudflare.com/products/registrar/) / [Namecheap](https://www.namecheap.com) / [Porkbun](https://porkbun.com/) / [dynadot](https://www.dynadot.com/)
 - DNS Nameservers: [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/205195708-Changing-your-domain-nameservers-to-Cloudflare) [^a]
-- Monitoring: [UptimeRobot](https://uptimerobot.com)
+- Monitoring: [Upptime](https://upptime.js.org)
 - URL Shortener: [Short.io](https://short.io)
 - Static Site Hosting: [Cloudflare Pages](https://pages.cloudflare.com/)
 - Website Performance Analysis: [PageSpeed Insights](https://pagespeed.web.dev/)
