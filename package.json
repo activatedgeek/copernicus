@@ -1,7 +1,7 @@
 {
   "name": "copernicus",
   "type": "module",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "scripts": {
     "dev": "astro dev",
     "pretty": "prettier --write .",
@@ -14,12 +14,12 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^10.4.1",
-    "@astrojs/mdx": "^3.1.5",
+    "@astrojs/mdx": "^3.1.7",
     "@astrojs/react": "^3.6.2",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@picocss/pico": "^2.0.6",
-    "astro": "^4.15.2",
+    "astro": "^4.15.9",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "github-slugger": "^2.0.0",
@@ -38,9 +38,9 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.5",
+    "@types/react": "^18.3.9",
     "@types/react-dom": "^18.3.0",
-    "npm-check-updates": "^17.1.1",
+    "npm-check-updates": "^17.1.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1"
   }
