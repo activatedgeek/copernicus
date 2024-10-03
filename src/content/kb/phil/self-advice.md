@@ -2,50 +2,49 @@
 title: Self Advice
 description: ...for the hard days.
 date: Apr 4 2023, 13:10 -0400
-updated: May 5 2024, 14:18 -0400
+updated: Oct 2 2024, 16:17 -0400
 area: phil
 ---
 
-Small bits of advice, labelled by the epistemic status of my ability to follow them.
+Small bits of advice, labeled by how well I follow them.
 
-!> :information_source: See also [Questions for Self-Introspection](/kb/questions-for-self-introspection).
+---
 
-### Epistemic Status Key
+> #### Label Key
+>
+> - :innocent: Delighted
+> - :slightly_smiling_face: Satisfied
+> - :neutral_face: OK
+> - :grimacing: Requires Improvement
+> - :disappointed: Disappointed
 
-- :innocent:: Very Satisfied.
-- :slightly_smiling_face:: Satisfied.
-- :neutral_face:: OK.
-- :grimacing:: Requires Improvement.
-- :disappointed:: Disappointed.
+---
 
 ## Advice
 
-- Use sunscreen. :innocent:
-- Sleep, a lot. :innocent:
-- Be kind. Don't be an asshole. Don't be a push over either. :innocent:
-- Lift weights. Build muscle. :neutral_face:
-- Get hammered. :innocent:
-- You will break hearts. Own up to mistakes. :innocent:
-- Your heart will be broken. Learn to live with it. :innocent:
-- Don't panic. Be a detached Buddha. :innocent:
-- Have a hobby project. Don't bother finishing it. :slightly_smiling_face:
-- Purpose is fleeting - only comes from work or relationships like parents, s/o, kids, etc. :neutral_face:
-- Motivation is a myth. Just show up. :neutral_face:
-- Your ideas suck. Do it anyway. :neutral_face:
-- [Everything is a practice.](https://luxagraf.net/essay/everything-is-a-practice) :neutral_face:
-- Pick an industry instead of a job. :slightly_smiling_face:
-- Figure out [the optimal amount of hassle](https://www.collaborativefund.com/blog/the-optimal-amount-of-hassle/). :grimacing:
-- Communicate explicitly. :neutral_face:
-- You will always under-communicate. Be better. :grimacing:
-- Remember compounding (of money, knowledge, everything). :slightly_smiling_face:
-- Thought experiments in extremes. :disappointed:
-- Show, then tell. :neutral_face:
-- Build taste. :neutral_face:
-- Everyone has an agenda. Figure it out and adapt. :neutral_face:
-- Always account for [bias](/kb/mother-of-all-bias-models). :slightly_smiling_face:
-- Things won’t get easier. Just get better at handling them. :neutral_face:
-- Make hard things easy. :neutral_face:
-- Don't be a [B Lane Swimmer](https://web.archive.org/web/20240313174622/https://holly.witteman.ca/the-b-lane-swimmer/). :innocent:
+- :innocent: Sleep, a lot.
+- :neutral_face: Be kind to yourself.
+- :innocent: Use sunscreen.
+- :innocent: Don't be a [B Lane Swimmer](https://web.archive.org/web/20240313174622/https://holly.witteman.ca/the-b-lane-swimmer/). Also, avoid one.
+- :slightly_smiling_face: Be a detached Buddha.
+- :slightly_smiling_face: Care about something larger than yourself (family, work, etc.).
+- :slightly_smiling_face: Action over excuses.
+- :slightly_smiling_face: Always be compounding (money, knowledge, skill, everything).
+- :neutral_face: Just show up. Motivation is a myth.
+- :innocent: Work-life balance assumes a false dichotomy.
+- :neutral_face: First, do the obvious.
+- :disappointed: Lift weights. Build muscle.
+- :grimacing: [Rest in motion](https://mindingourway.com/rest-in-motion/).
+- :neutral_face: Over-communicate.
+- :disappointed: Write, a lot.
+- :innocent: Break hearts and be heartbroken. Own up and learn to live with it.
+- :slightly_smiling_face: Choose an industry not a job.
+- :neutral_face: Build taste.
+- :neutral_face: [Everything is a practice](https://luxagraf.net/essay/everything-is-a-practice).
+- :neutral_face: Belief and confidence over despair.
+- :slightly_smiling_face: Always keep unfinished projects.
+
+!> :information_source: See also [Questions for Self-Introspection](/kb/questions-for-self-introspection).
 
 ## Miscellaneous
 

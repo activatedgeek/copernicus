@@ -2,7 +2,7 @@
 title: The Stack
 description: Tools powering this website.
 date: Jun 19 2020, 14:32 -0700
-updated: Sep 16 2025, 9:05 -0400
+updated: Sep 16 2024, 9:05 -0400
 area: meta
 ---
 
