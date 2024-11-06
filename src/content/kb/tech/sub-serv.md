@@ -2,7 +2,7 @@
 title: Subscriptions and Services
 description: Recommendations.
 date: Jan 8 2021, 13:29 +0530
-updated: Sep 16 2024, 9:16 -0400
+updated: Oct 28 2024, 16:40 -0400
 area: tech
 ---
 
@@ -55,6 +55,7 @@ These are some of the subscriptions & services I use(d), and recommend.
 - Miles/Rewards: [Points411](https://www.points411.com/)
 - Fonts: [Fontsource](https://fontsource.org/) / [Bunny Fonts](https://fonts.bunny.net/) / [Fontshare](https://www.fontshare.com/)
 - Semantic Annotations: [Wikifier](https://wikifier.org)
+- Maps: [MapHub](https://maphub.net/)
 
 [^a]: DNS proxied through Cloudflare also provides free SSL certificates!
 

@@ -2,7 +2,7 @@
 title: AI Products
 description: Collecting what use-cases are people building AI for.
 date: Mar 22 2024, 14:16 -0400
-updated: May 24 2024, 23:03 -0400
+updated: Oct 25 2024, 19:18 -0400
 area: tech
 ---
 
@@ -105,3 +105,5 @@ A common theme I am seeing here is many products aim to compete with incumbents 
 [AI Grant](https://aigrant.com)
 
 [Lux NYC x AI Company Database](https://airtable.com/appK49oThZBOTSYlX/shr5Chudz00G5jxwW/tblFlqQHeAvsVxLNI)
+
+[LLM-based educational games will be a big deal](https://resobscura.substack.com/p/llm-based-educational-games-will)

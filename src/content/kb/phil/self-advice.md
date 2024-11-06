@@ -2,7 +2,7 @@
 title: Self Advice
 description: ...for the hard days.
 date: Apr 4 2023, 13:10 -0400
-updated: Oct 2 2024, 16:17 -0400
+updated: Oct 8 2024, 11:14 -0400
 area: phil
 ---
 
@@ -41,8 +41,8 @@ Small bits of advice, labeled by how well I follow them.
 - :slightly_smiling_face: Choose an industry not a job.
 - :neutral_face: Build taste.
 - :neutral_face: [Everything is a practice](https://luxagraf.net/essay/everything-is-a-practice).
-- :neutral_face: Belief and confidence over despair.
-- :slightly_smiling_face: Always keep unfinished projects.
+- :neutral_face: Everything is sales.
+- :grimacing: Belief and confidence over despair.
 
 !> :information_source: See also [Questions for Self-Introspection](/kb/questions-for-self-introspection).
 

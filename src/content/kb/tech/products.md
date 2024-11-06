@@ -2,7 +2,7 @@
 title: Products
 description: Just generally good lifestyle upgrades.
 date: Jun 19 2020, 12:03 -0700
-updated: Oct 10 2023, 12:49 -0400
+updated: Oct 28 2024, 16:42 -0400
 area: tech
 ---
 
@@ -33,7 +33,8 @@ Some are products I own and others I want to try/buy. Others are just generally 
 
 - [**The Framework Laptop**](https://frame.work) - A thin and light notebook that looks as pretty as the Macbook, but as configurable as a home-built machine. In an ideal world, I could use all the macOS goodness on Linux via [Darling](https://www.darlinghq.org).
 - [**Zimaboard**](https://www.zimaboard.com) - Single board server.
+- [**Bambu Lab 3D Printer**](https://bambulab.com) - 3D printers are turning a page in their evolution. This will be an impluse buy if at all.
 
 * [**AirPods Pro**](https://www.apple.com/airpods-pro/) - For solid noise cancellation with an easy form factor.
 * **Noise Cancelling Headphones** - I recommend any of the [Sony WH-1000XM Series](https://www.sony.com/lr/electronics/headband-headphones/wh-1000xm5).
-* [**Apple TV 4K**](https://www.apple.com/apple-tv-4k/) - I do not think there is a better UI. Remains minimal, and gets out of the way quickly, something I have missed from other OEMs and Android.
+* [**Apple TV 4K**](https://www.apple.com/apple-tv-4k/) - I do not think there is a better user experience. Remains minimal, and gets out of the way quickly, something I have missed from other OEMs and Android.

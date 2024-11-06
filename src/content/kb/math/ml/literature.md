@@ -47,4 +47,4 @@ area: math
 - [Optimization for Machine Learning I](https://www.youtube.com/watch?v=f0qQsz4-o68) by Elad Hazan
 - [Denoising as a Building Block for Imaging, Inverse Problems, and Machine Learning](https://www.youtube.com/watch?v=Mj_tjSOaifI&t=4s) by Peyman Milanfar
 - [Multimodal Deep Learning](https://www.youtube.com/watch?v=5vfIT5LOkR0) by Douwe Kiela
-- [Physics of Language Models](https://www.youtube.com/watch?v=kf_eGgVtOcs) by Zeyuan Allen-Zhu ([Part 2](https://www.youtube.com/watch?v=bpp6Dz8N2zY) | [Part 3](https://www.youtube.com/watch?v=YSHzKmEianc))
+- [Physics of Language Models](https://www.youtube.com/watch?v=kf_eGgVtOcs) by Zeyuan Allen-Zhu ([Part 2](https://www.youtube.com/watch?v=bpp6Dz8N2zY) | [Part 3](https://www.youtube.com/watch?v=YSHzKmEianc)) (2024)
