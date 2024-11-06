@@ -19,7 +19,7 @@
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.2.0",
     "@picocss/pico": "^2.0.6",
-    "astro": "^4.15.11",
+    "astro": "^4.16.10",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "github-slugger": "^2.0.0",
