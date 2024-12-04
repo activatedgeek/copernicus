@@ -2,7 +2,7 @@
 title: Products
 description: Just generally good lifestyle upgrades.
 date: Jun 19 2020, 12:03 -0700
-updated: Oct 28 2024, 16:42 -0400
+updated: Nov 24 2024, 14:39 -0400
 area: tech
 ---
 
@@ -38,3 +38,8 @@ Some are products I own and others I want to try/buy. Others are just generally 
 * [**AirPods Pro**](https://www.apple.com/airpods-pro/) - For solid noise cancellation with an easy form factor.
 * **Noise Cancelling Headphones** - I recommend any of the [Sony WH-1000XM Series](https://www.sony.com/lr/electronics/headband-headphones/wh-1000xm5).
 * [**Apple TV 4K**](https://www.apple.com/apple-tv-4k/) - I do not think there is a better user experience. Remains minimal, and gets out of the way quickly, something I have missed from other OEMs and Android.
+* [**Daylight**](https://daylightcomputer.com) - A computer you can use outside, without the distractions.
+
+## Lifestyle
+
+- [**Midori Stationery**](https://md.midori-japan.co.jp/en/) - Perhaps the Apple for stationery. I would love a nice piece of paper to write down thoughts, instead of my private digital notebook.

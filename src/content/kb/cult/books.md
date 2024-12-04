@@ -2,7 +2,7 @@
 title: Books
 description: List of books I am reading or have read.
 date: Jun 6 2020, 20:01 -0700
-updated: Sep 24 2023, 18:26 -0400
+updated: Dec 3 2024, 17:36 -0400
 area: cult
 ---
 
@@ -46,7 +46,7 @@ I am also curious about Alex Kasman's reading list on [Mathematical Fiction](htt
 
 ### Services
 
-I also like the mission of [Open Library](https://openlibrary.org), and ended up donating a tiny amount. I highly recommend checking them out as well, since they allow book loans.
+I also like the mission of [Open Library](https://openlibrary.org), and ended up donating a tiny amount. I highly recommend checking them out as well, since they allow book loans. [Standard Ebooks](https://standardebooks.org) reformats and typesets many DRM-free titles.
 
 [Five Books](https://fivebooks.com) provides (expert-)curated list of five books on a variety of topics. [Shepherd](https://shepherd.com/) is another upcoming service that aims to bring the experience of browsing a bookstore to the web. It also has curated recommendations from authors. [Hacker News Books](https://hackernewsbooks.com) newsletter is also often resourceful.
 
@@ -54,6 +54,8 @@ I also like the mission of [Open Library](https://openlibrary.org), and ended up
 search engine for books. [thriftbooks](https://www.thriftbooks.com) lives up to its name, and provides cheap (used) books in good condition!
 
 [Planet EBook](https://www.planetebook.com/) has free e-books for many popular classic titles.
+
+
 
 ### Philosophy of Math
 
