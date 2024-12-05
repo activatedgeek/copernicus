@@ -79,4 +79,4 @@ jobs:
         if: always()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          username: copernicus
+          username: ${{ github.repository }}
