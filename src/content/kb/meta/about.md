@@ -4,6 +4,8 @@ description: I do normal science.
 date: Jun 6 2020, 20:02 -0700
 updated: Jun 15 2023, 12:30 -0400
 area: meta
+comments: false
+hideMetadata: true
 unlisted: true
 ---
 

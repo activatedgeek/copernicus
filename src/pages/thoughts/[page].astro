@@ -29,8 +29,8 @@ const {
         {frontmatter.description}
       </p>
     </section>
+    <hr />
     <section>
-      <hr />
       {
         data.map(async (page) => {
           const { Content } = await page.render();
@@ -48,7 +48,6 @@ const {
           );
         })
       }
-      <hr />
     </section>
     <nav>
       <ul>
@@ -77,12 +76,20 @@ const {
         </li>
       </ul>
     </nav>
+    <hr />
   </main>
 </THtml>
 
 <style>
   section.hero {
     text-align: center;
+  }
+
+  main > hr {
+    margin: var(--pico-spacing) 0;
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
   }
 
   section {
@@ -93,13 +100,6 @@ const {
         color: var(--pico-muted-color);
         font-size: small;
       }
-    }
-
-    > hr {
-      margin: var(--pico-spacing) 0;
-      width: 100vw;
-      position: relative;
-      left: calc(-50vw + 50%);
     }
   }
 

@@ -12,14 +12,14 @@ const { page } = Astro.props;
 const { data: frontmatter } = page;
 const { Content } = await page.render();
 
-const { title, description, date, updated, area, comments } = frontmatter;
+const { title, description, date, updated, area, comments, hideMetadata } =
+  frontmatter;
 ---
 
 <style>
   section {
     padding-bottom: calc(0.5 * var(--pico-spacing));
-    border-bottom: solid var(--pico-muted-border-color)
-      calc(1.2 * var(--pico-border-width));
+    margin-bottom: 0;
 
     > h1 {
       margin-bottom: calc(0.25 * var(--pico-typography-spacing-vertical));
@@ -56,6 +56,13 @@ const { title, description, date, updated, area, comments } = frontmatter;
       }
     }
   }
+
+  main > hr {
+    margin: var(--pico-spacing) 0;
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+  }
 </style>
 
 <Html frontmatter={frontmatter}>
@@ -66,10 +73,10 @@ const { title, description, date, updated, area, comments } = frontmatter;
     slot="head"
   />
   <main data-pagefind-body>
-    <section>
+    <section style="text-align: center;">
       <h1 style="--pico-font-size: 2.5rem;">{title}</h1>
       <p style="--pico-font-size: 1.5rem;">{description}</p>
-      <div>
+      <div style={hideMetadata ? "display: none;" : "display: inline-block;"}>
         <div>
           {
             updated || date ? (
@@ -98,6 +105,7 @@ const { title, description, date, updated, area, comments } = frontmatter;
         </div>
       </div>
     </section>
+    <hr />
     <Content />
     <slot />
     {
@@ -107,5 +115,6 @@ const { title, description, date, updated, area, comments } = frontmatter;
         </section>
       ) : null
     }
+    <hr />
   </main>
 </Html>

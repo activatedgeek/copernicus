@@ -1,15 +1,14 @@
 ---
 import { getEntry } from "astro:content";
-import { PiTreeBold } from "react-icons/pi";
-import { TfiThought } from "react-icons/tfi";
-import { IoSearch } from "react-icons/io5";
 
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
 import Goatcounter from "./Goatcounter.astro";
 
 import "@styles/main.css";
 
 const {
-  frontmatter: { title, description, area, date, updated, keywords, authors },
+  frontmatter: { title, description, date, keywords },
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, import.meta.env.SITE);
@@ -52,52 +51,14 @@ const {
       ) : null
     }
 
-    {
-      updated ? (
-        <meta
-          property="article:modified_time"
-          content={updated.toISOString()}
-        />
-      ) : null
-    }
-
     <Goatcounter />
 
     <slot name="head" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a title="Home" href="/">
-              <img style="width: 1.3em; height: auto;" src="/favicon.svg" />
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a title="Knowledge Base" href="/kb">
-              <PiTreeBold />
-              <span>Knowledge Base</span>
-            </a>
-          </li>
-          <li>
-            <a title="Thoughts" href="/thoughts">
-              <TfiThought />
-              <span>Thoughts</span>
-            </a>
-          </li>
-          <li>
-            <a title="Search" href="/search">
-              <IoSearch />
-              <span>Search</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 

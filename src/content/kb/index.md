@@ -4,6 +4,8 @@ description: My second brain.
 date: Jul 14 2020, 19:07 -0700
 updated: May 26 2023, 23:42 -0400
 area: meta
+comments: false
+hideMetadata: true
 unlisted: true
 ---
 

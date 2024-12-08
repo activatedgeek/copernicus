@@ -1,64 +1,75 @@
 ---
-import { getEntry } from "astro:content";
 import { IoSearch } from "react-icons/io5";
 import { PiTreeBold } from "react-icons/pi";
-
-const { area } = Astro.props;
-
-const {
-  data: { backgroundColor },
-} = await getEntry(area.collection, area.id);
+import { TfiThought } from "react-icons/tfi";
 ---
 
-<style>
-  header {
-    padding: 0 var(--pico-typography-spacing-vertical);
-  }
-
-  a {
-    display: inline-flex;
-    vertical-align: middle;
-    align-items: center;
-
-    > span {
-      margin-left: calc(var(--pico-spacing) * 0.5);
-    }
-  }
-
-  div.area-identifier {
-    width: 100vw;
-    height: calc(7 * var(--pico-border-width));
-    background-color: var(--area-background-color);
-  }
-</style>
-
-<div
-  class="area-identifier"
-  style={`--area-background-color: ${backgroundColor};`}
->
-</div>
 <header>
   <nav>
     <ul>
       <li>
-        <a href="/">
-          <image src="/sk.svg" alt="SK Logo" width={70} height="auto" />
+        <a title="Home" href="/">
+          <img
+            style="width: 1.3em; height: auto;"
+            src="/favicon.svg"
+            alt="SK Logo"
+          />
         </a>
       </li>
     </ul>
     <ul>
       <li>
-        <a title="Search" href="/search">
-          <IoSearch color="var(--pico-primary)" />
-          <span>Search</span>
+        <a title="Knowledge Base" href="/kb">
+          <PiTreeBold />
+          <span>KB</span>
         </a>
       </li>
       <li>
-        <a title="Knowledge Base" href="/kb">
-          <PiTreeBold color="var(--pico-primary)" />
-          <span>KB</span>
+        <a title="Thoughts" href="/thoughts">
+          <TfiThought />
+          <span>Thoughts</span>
+        </a>
+      </li>
+      <li>
+        <a title="Search" href="/search">
+          <IoSearch />
+          <span>Search</span>
         </a>
       </li>
     </ul>
   </nav>
 </header>
+
+<style>
+  header {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    > nav {
+      display: inline-flex;
+      align-items: center;
+      padding: calc(0.2 * var(--pico-spacing)) var(--pico-spacing);
+      backdrop-filter: blur(4px) saturate(50%);
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: calc(4 * var(--pico-border-radius));
+      border: 2px solid rgba(209, 213, 219, 0.3);
+
+      > ul {
+        > li {
+          display: inline-flex;
+          align-items: center;
+          padding: 0 var(--pico-nav-element-spacing-horizontal);
+          > a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 var(--pico-nav-element-spacing-horizontal);
+
+            > span {
+              margin: 0 calc(0.2 * var(--pico-spacing));
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
