@@ -9,7 +9,7 @@ area: meta
 This page details the tools powering this website.
 
 The pages are statically rendered to HTML by [Astro](https://astro.build/).
-All the page layouts are built in vanilla HTML, minimal [React](https://react.dev),[^react] and styled by [Pico CSS](https://picocss.com/).
+All the page layouts are built in vanilla HTML, minimal [React](https://react.dev),[^react] and base styles from [Pico CSS](https://picocss.com/).
 All pages use the variable sans-serif font [Assistant](https://fonts.google.com/specimen/Assistant).
 
 [^react]: I would like to use React as less as possible, except for parts that require interactivity and state management.
@@ -22,8 +22,7 @@ Images are hosted on [Imgur](https://imgur.com).
 Continuous integration is supported by [Github Actions](https://github.com/features/actions).
 Website is deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
 Uptime is monitored via [Upptime](https://upptime.js.org).
-Domain registrar is [Namecheap](https://namecheap.com).
-Nameservers are hosted on [Cloudflare](https://www.cloudflare.com).
+Domain registrar is [Cloudflare](https://www.cloudflare.com), which also hosts the nameservers.
 
 Search is powered by [Pagefind](https://pagefind.app/). Minimal analytics are powered by [GoatCounter](https://www.goatcounter.com). Comments are powered by [Gisqus](https://giscus.app).
 

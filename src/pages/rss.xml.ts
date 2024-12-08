@@ -1,28 +1,8 @@
+import { experimental_AstroContainer } from "astro/container";
 import { getEntry, getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 
 import { processCollectionItem } from "@lib/collections";
-
-const allPages = (
-  await Promise.all((await getCollection("kb")).map(processCollectionItem))
-)
-  .map(
-    ({
-      params: { slug },
-      props: {
-        page: {
-          data: { title, description, date, updated, unlisted },
-        },
-      },
-    }) => ({
-      title,
-      description,
-      link: `/kb/${slug}`,
-      pubDate: updated || date,
-      unlisted,
-    }),
-  )
-  .filter(({ unlisted }) => !unlisted);
 
 const {
   data: { name: siteAuthorName },
@@ -30,11 +10,43 @@ const {
 
 export const prerender = true;
 
-export function GET(context) {
+export async function render({ params: { slug }, props: { page } }) {
+  const {
+    data: { title, description, date, updated },
+  } = page;
+
+  const { Content } = await page.render();
+  const container = await experimental_AstroContainer.create();
+  const content = await container.renderToString(Content);
+
+  return {
+    title,
+    description,
+    link: `/kb/${slug}`,
+    pubDate: updated || date,
+    content,
+  };
+}
+
+const allPages = (
+  await Promise.all((await getCollection("kb")).map(processCollectionItem))
+).filter(
+  ({
+    props: {
+      page: {
+        data: { unlisted },
+      },
+    },
+  }) => !unlisted,
+);
+
+const rssItems = await Promise.all(allPages.map(render));
+
+export async function GET({ site }) {
   return rss({
     title: `${siteAuthorName}'s Knowledge Base`,
     description: `${siteAuthorName}'s Knowledge Base`,
-    site: context.site,
-    items: allPages,
+    site,
+    items: rssItems,
   });
 }

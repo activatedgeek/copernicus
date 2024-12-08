@@ -18,7 +18,7 @@ export default defineConfig({
       preserveSymlinks: true,
     },
     ssr: {
-      external: ["node:buffer"],
+      external: ["node:buffer", "astro/container"],
     },
   },
   markdown: {

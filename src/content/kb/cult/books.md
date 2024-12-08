@@ -55,8 +55,6 @@ search engine for books. [thriftbooks](https://www.thriftbooks.com) lives up to 
 
 [Planet EBook](https://www.planetebook.com/) has free e-books for many popular classic titles.
 
-
-
 ### Philosophy of Math
 
 [Books on Philosophy of Math by Mathematicians](https://math.stackexchange.com/questions/4088403/books-on-philosophy-of-math-by-mathematicians/4090476)
