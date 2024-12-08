@@ -47,6 +47,7 @@ export async function GET({ site }) {
     title: `${siteAuthorName}'s Knowledge Base`,
     description: `${siteAuthorName}'s Knowledge Base`,
     site,
+    trailingSlash: false,
     items: rssItems,
   });
 }

@@ -110,5 +110,6 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "passthrough",
   }),
+  trailingSlash: "ignore",
   site: `https://${process.env.ASTRO_SITE || "copernicus.local"}`,
 });

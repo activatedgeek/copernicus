@@ -59,6 +59,12 @@ const { title, description, date, updated, area, comments } = frontmatter;
 </style>
 
 <Html frontmatter={frontmatter}>
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    href={new URL("kb/rss.xml", Astro.site)}
+    slot="head"
+  />
   <main data-pagefind-body>
     <section>
       <h1 style="--pico-font-size: 2.5rem;">{title}</h1>
