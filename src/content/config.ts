@@ -35,6 +35,14 @@ const kb = defineCollection({
   }),
 });
 
+const thoughts = defineCollection({
+  type: "content",
+  schema: z.object({
+    date: z.coerce.date(),
+    authors: z.array(reference("authors")).optional().default(["sk"]),
+  }),
+});
+
 const social = defineCollection({
   type: "data",
   schema: z.object({
@@ -48,4 +56,5 @@ export const collections = {
   kb,
   overview: kb,
   social,
+  thoughts,
 };

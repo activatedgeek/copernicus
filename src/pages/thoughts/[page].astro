@@ -1,0 +1,128 @@
+---
+import { getCollection } from "astro:content";
+
+import THtml from "@components/THtml.astro";
+import Date from "@components/Date.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const thoughts = await getCollection("thoughts");
+  return paginate(thoughts.reverse(), { pageSize: 20 });
+}
+
+export const prerender = true;
+
+const frontmatter = {
+  title: "Muddle of Thoughts",
+  description: "Random, incoherent ramblings.",
+};
+
+const {
+  page: { currentPage, data, url },
+} = Astro.props;
+---
+
+<THtml frontmatter={frontmatter}>
+  <main>
+    <section class="hero">
+      <h1 style="--pico-font-size: 2.5rem;">{frontmatter.title}</h1>
+      <p style="--pico-font-size: 1.5rem; color: var(--pico-muted-color);">
+        {frontmatter.description}
+      </p>
+    </section>
+    <section>
+      <hr />
+      {
+        data.map(async (page) => {
+          const { Content } = await page.render();
+          const {
+            data: { date },
+          } = page;
+          return (
+            <article>
+              <Content />
+              <footer>
+                <Date date={date} format="bdY" />
+                <Date date={date} format="HM" />
+              </footer>
+            </article>
+          );
+        })
+      }
+      <hr />
+    </section>
+    <nav>
+      <ul>
+        <li>
+          <a
+            href={url.prev ? url.prev : null}
+            style={url.prev ? "" : "opacity: 0; cursor: default;"}
+          >
+            {"< "}Previous
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <span style="color: var(--pico-muted-color);">{currentPage}</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a
+            href={url.next ? url.next : null}
+            style={url.next ? "" : "opacity: 0; cursor: default;"}
+          >
+            Next{" >"}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+</THtml>
+
+<style>
+  section.hero {
+    text-align: center;
+  }
+
+  section {
+    > article {
+      box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
+
+      > footer {
+        color: var(--pico-muted-color);
+        font-size: small;
+      }
+    }
+
+    > hr {
+      margin: var(--pico-spacing) 0;
+      width: 100vw;
+      position: relative;
+      left: calc(-50vw + 50%);
+    }
+  }
+
+  section:last-of-type {
+    padding: 0 var(--pico-spacing);
+  }
+
+  nav {
+    font-size: medium;
+    > ul > li {
+      padding: 0 var(--pico-spacing);
+
+      > a {
+        cursor: pointer;
+        padding: 0 var(--pico-spacing);
+      }
+
+      > button {
+        cursor: default;
+        font-size: medium;
+        background-color: white;
+        color: var(--pico-primary);
+      }
+    }
+  }
+</style>

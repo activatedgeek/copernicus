@@ -1,0 +1,136 @@
+---
+import { getEntry } from "astro:content";
+import { PiTreeBold } from "react-icons/pi";
+import { TfiThought } from "react-icons/tfi";
+import { IoSearch } from "react-icons/io5";
+
+import Goatcounter from "./Goatcounter.astro";
+
+import "@styles/main.css";
+
+const {
+  frontmatter: { title, description, area, date, updated, keywords, authors },
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, import.meta.env.SITE);
+
+const {
+  data: { name: siteAuthorName },
+} = await getEntry("authors", "sk");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.png" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta name="giscus:backlink" content={canonicalURL.href} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title} | {siteAuthorName}</title>
+    <meta name="description" content={description} />
+
+    <meta name="keywords" content={(keywords || []).join(",")} />
+    <meta name="publisher" content={canonicalURL.hostname} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    {
+      date ? (
+        <meta property="article:published_time" content={date.toISOString()} />
+      ) : null
+    }
+
+    {
+      updated ? (
+        <meta
+          property="article:modified_time"
+          content={updated.toISOString()}
+        />
+      ) : null
+    }
+
+    <Goatcounter />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a title="Home" href="/">
+              <img style="width: 1.3em; height: auto;" src="/favicon.svg" />
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a title="Knowledge Base" href="/kb">
+              <PiTreeBold />
+              <span>Knowledge Base</span>
+            </a>
+          </li>
+          <li>
+            <a title="Thoughts" href="/thoughts">
+              <TfiThought />
+              <span>Thoughts</span>
+            </a>
+          </li>
+          <li>
+            <a title="Search" href="/search">
+              <IoSearch />
+              <span>Search</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <slot />
+  </body>
+</html>
+
+<style>
+  header {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    > nav {
+      display: inline-flex;
+      align-items: center;
+      padding: calc(0.2 * var(--pico-spacing)) var(--pico-spacing);
+      backdrop-filter: blur(4px) saturate(50%);
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: calc(4 * var(--pico-border-radius));
+      border: 2px solid rgba(209, 213, 219, 0.3);
+
+      > ul {
+        > li {
+          display: inline-flex;
+          align-items: center;
+          padding: 0 var(--pico-nav-element-spacing-horizontal);
+          > a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 var(--pico-nav-element-spacing-horizontal);
+
+            > span {
+              margin: 0 calc(0.2 * var(--pico-spacing));
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
