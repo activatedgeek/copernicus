@@ -6,7 +6,7 @@ import Date from "@components/Date.astro";
 
 export async function getStaticPaths({ paginate }) {
   const thoughts = await getCollection("thoughts");
-  return paginate(thoughts.reverse(), { pageSize: 11 });
+  return paginate(thoughts.reverse(), { pageSize: 19 });
 }
 
 export const prerender = true;

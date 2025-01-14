@@ -2,7 +2,7 @@
 title: Textbooks on Various Subjects
 description: Textbooks to learn various technical topics in literature.
 date: Jun 6 2020, 20:00 -0700
-updated: Jan 2 2024, 15:04 -0400
+updated: Dec 31 2024, 13:07 -0400
 area: ref
 ---
 
@@ -57,6 +57,7 @@ Cannot learn enough of numerical methods.
 
 - [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlbook/) by Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar (2012; 2018)
 - [Understanding Machine Learning: From Theory to Algorithms](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/index.html) by Shai Shalev-Shwartz and Shai Ben-David (2014)
+- [Learning Theory from First Principles](https://mitpress.mit.edu/9780262049443/learning-theory-from-first-principles/) by Francis Bach (2024)
 
 ### Statistics
 

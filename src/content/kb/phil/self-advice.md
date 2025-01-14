@@ -2,7 +2,7 @@
 title: Self Advice
 description: ...for the hard days.
 date: Apr 4 2023, 13:10 -0400
-updated: Oct 8 2024, 11:14 -0400
+updated: Dec 21 2024, 8:45 +0530
 area: phil
 ---
 
@@ -33,6 +33,7 @@ Small bits of advice, labeled by how well I follow them.
 - :neutral_face: Just show up. Motivation is a myth.
 - :innocent: Work-life balance assumes a false dichotomy.
 - :neutral_face: First, do the obvious.
+- :neutral_face: Develop a [sense of urgency](https://rayhightower.com/blog/2024/12/06/sense-of-urgency/).
 - :disappointed: Lift weights. Build muscle.
 - :grimacing: [Rest in motion](https://mindingourway.com/rest-in-motion/).
 - :neutral_face: Over-communicate.
