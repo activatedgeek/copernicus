@@ -1,3 +1,4 @@
+import { render } from "astro:content";
 import { experimental_AstroContainer } from "astro/container";
 import { getEntry, getCollection } from "astro:content";
 import rss from "@astrojs/rss";
@@ -10,12 +11,12 @@ const {
 
 export const prerender = true;
 
-export async function render({ params: { slug }, props: { page } }) {
+export async function offline_render({ params: { slug }, props: { page } }) {
   const {
     data: { title, description, date, updated },
   } = page;
 
-  const { Content } = await page.render();
+  const { Content } = await render(page);
   const container = await experimental_AstroContainer.create();
   const content = await container.renderToString(Content);
 
@@ -40,7 +41,7 @@ const allPages = (
   }) => !unlisted,
 );
 
-const rssItems = await Promise.all(allPages.map(render));
+const rssItems = await Promise.all(allPages.map(offline_render));
 
 export async function GET({ site }) {
   return rss({

@@ -1,4 +1,5 @@
 ---
+import { render } from "astro:content";
 import { FaCalendarDay, FaTag } from "react-icons/fa";
 
 import Html from "@components/Html.astro";
@@ -10,7 +11,7 @@ import "@styles/katex.css";
 
 const { page } = Astro.props;
 const { data: frontmatter } = page;
-const { Content } = await page.render();
+const { Content } = await render(page);
 
 const { title, description, date, updated, area, comments, hideMetadata } =
   frontmatter;

@@ -1,7 +1,8 @@
 import { z, defineCollection, reference } from "astro:content";
+import { glob } from "astro/loaders";
 
 const areas = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/[^_]*.json", base: "./src/data/areas" }),
   schema: z.object({
     label: z.string(),
     emoji: z.string(),
@@ -11,15 +12,22 @@ const areas = defineCollection({
 });
 
 const authors = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/[^_]*.json", base: "./src/data/authors" }),
   schema: z.object({
     name: z.string(),
     url: z.string().url(),
   }),
 });
 
+const social = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.json", base: "./src/data/social" }),
+  schema: z.object({
+    url: z.string().url(),
+  }),
+});
+
 const kb = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/kb" }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional().default(""),
@@ -36,26 +44,24 @@ const kb = defineCollection({
   }),
 });
 
+const overview = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/overview" }),
+  schema: kb.schema,
+});
+
 const thoughts = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/thoughts" }),
   schema: z.object({
     date: z.coerce.date(),
     authors: z.array(reference("authors")).optional().default(["sk"]),
   }),
 });
 
-const social = defineCollection({
-  type: "data",
-  schema: z.object({
-    url: z.string().url(),
-  }),
-});
-
 export const collections = {
   areas,
   authors,
-  kb,
-  overview: kb,
   social,
+  kb,
+  overview,
   thoughts,
 };

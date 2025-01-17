@@ -1,12 +1,19 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import THtml from "@components/THtml.astro";
 import Date from "@components/Date.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const thoughts = await getCollection("thoughts");
-  return paginate(thoughts.reverse(), { pageSize: 19 });
+  const thoughts = (await getCollection("thoughts")).sort(
+    ({ data: { date: dateA } }, { data: { date: dateB } }) => {
+      if (dateA < dateB) {
+        return 1;
+      }
+      return -1;
+    },
+  );
+  return paginate(thoughts, { pageSize: 19 });
 }
 
 export const prerender = true;
@@ -33,7 +40,7 @@ const {
     <section>
       {
         data.map(async (page) => {
-          const { Content } = await page.render();
+          const { Content } = await render(page);
           const {
             data: { date },
           } = page;

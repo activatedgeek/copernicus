@@ -20,7 +20,7 @@ export async function processCollectionItem(item) {
   };
 
   return {
-    params: { slug },
+    params: { slug, id: slug },
     props: { page: { ...item, slug } },
   };
 }
