@@ -13,7 +13,7 @@ export async function getStaticPaths({ paginate }) {
       return -1;
     },
   );
-  return paginate(thoughts, { pageSize: 19 });
+  return paginate(thoughts, { pageSize: 23 });
 }
 
 export const prerender = true;
@@ -42,10 +42,11 @@ const {
         data.map(async (page) => {
           const { Content } = await render(page);
           const {
+            id,
             data: { date },
           } = page;
           return (
-            <article>
+            <article id={`t${id}`}>
               <Content />
               <footer>
                 <Date date={date} format="bdY" />
