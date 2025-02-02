@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { h } from "hastscript";
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
@@ -6,6 +7,7 @@ import sitemap from "@astrojs/sitemap";
 import remarkEmoji from "remark-emoji";
 import remarkHint from "remark-hint";
 import remarkMath from "remark-math";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeFigure from "rehype-figure";
 import rehypeKatex from "rehype-katex";
@@ -39,6 +41,26 @@ export default defineConfig({
       rehypeFigure,
       rehypeKatex,
       rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+          content: () => [
+            h(
+              "span",
+              {
+                style:
+                  "display: inline-flex; vertical-align: middle; font-size: calc(0.4 * var(--pico-font-size));",
+              },
+              "🔗",
+            ),
+          ],
+          properties: {
+            style:
+              "text-decoration: none; margin-left: calc(0.3 * var(--pico-spacing));",
+          },
+        },
+      ],
       [
         rehypeToC,
         {

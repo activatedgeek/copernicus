@@ -43,7 +43,7 @@ pervasive materials, partly noted from the above book._
 
 ### The Mythbuster
 
-I was inspired by [Inoue Enryō](/kb/inoue-enryō). He was probably the real
+I was inspired by [Inoue Enryō](/kb/inoue-enryo). He was probably the real
 mythbuster. Far too many people have succumbed to superstitions and
 folklore. The need to explain the unknown via a divine intervention is
 overrated and a hindrance to our development. In my ideal world,
