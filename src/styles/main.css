@@ -1,9 +1,9 @@
 @import "@picocss/pico/css/pico.classless.min.css";
 
 :root {
-  --pico-font-family-sans-serif: "Assistant", -apple-system, system-ui,
-    "Segoe UI", Helvetica, Arial, "Helvetica Neue", sans-serif,
-    var(--pico-font-family-emoji);
+  --pico-font-family-sans-serif:
+    "Assistant", -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
 }
 
 body {

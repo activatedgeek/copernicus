@@ -2,7 +2,7 @@
 title: Machine Learning literature
 description: Recommendations for tutorials, surveys and theses.
 date: Jul 5 2020, 15:44 -0700
-updated: Sep 28 2024, 10:59 -0400
+updated: Feb 11 2025, 15:10 -0400
 area: math
 ---
 
@@ -28,6 +28,7 @@ area: math
 - [An Invitation to Deep Reinforcement Learning](https://arxiv.org/abs/2312.08365) by Bernhard Jaeger, Andreas Geiger (2023)
 - [Foundations of Vector Retreival](https://arxiv.org/abs/2401.09350) by Sebastian Bruch (2024)
 - [User-friendly Introduction to PAC-Bayes Bounds](https://www.nowpublishers.com/article/Details/MAL-100) by Pierre Alquier (2024)
+- [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264) by Yaron Lipman et. al. (2024)
 
 ## Surveys
 

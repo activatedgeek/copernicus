@@ -2,7 +2,7 @@
 title: AI Products
 description: Collecting what use-cases are people building AI for.
 date: Mar 22 2024, 14:16 -0400
-updated: Oct 25 2024, 19:18 -0400
+updated: Feb 11 2025, 19:53 -0400
 area: tech
 ---
 
@@ -41,6 +41,8 @@ These products/startups are a window into what startup founders and investors th
 [OpenFoundry](https://www.openfoundry.ai) - Developer infrastructure for open source AI.
 
 [Abacus.AI](https://abacus.ai) - AI platform for enterprises.
+
+[Prime Intellect](https://www.primeintellect.ai) - Distributed training across shared clusters.
 
 ### Creative
 
