@@ -18,6 +18,9 @@ export default defineConfig({
   vite: {
     resolve: {
       preserveSymlinks: true,
+      alias: import.meta.env.PROD && {
+        "react-dom/server": "react-dom/server.edge",
+      },
     },
     ssr: {
       external: ["node:buffer", "astro/container"],
