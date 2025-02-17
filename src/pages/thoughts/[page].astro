@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { LuCalendarClock } from "react-icons/lu";
 
 import THtml from "@components/THtml.astro";
 import Date from "@components/Date.astro";
@@ -31,8 +32,15 @@ const {
 <THtml frontmatter={frontmatter}>
   <main>
     <section class="hero">
-      <h1 style="--pico-font-size: 2.5rem;">{frontmatter.title}</h1>
-      <p style="--pico-font-size: 1.5rem; color: var(--pico-muted-color);">
+      <h1 style={{ fontSize: "calc(1.2 * var(--pico-font-size))" }}>
+        {frontmatter.title}
+      </h1>
+      <p
+        style={{
+          fontSize: "calc(0.8 * var(--pico-font-size))",
+          color: "var(--pico-muted-color)",
+        }}
+      >
         {frontmatter.description}
       </p>
     </section>
@@ -49,8 +57,15 @@ const {
             <article id={`t${id}`}>
               <Content />
               <footer>
-                <Date date={date} format="bdY" />
-                <Date date={date} format="HM" />
+                <span>
+                  <LuCalendarClock />
+                </span>
+                <span>
+                  <Date date={date} format="bdY" />
+                </span>
+                <span>
+                  <Date date={date} format="HM" />
+                </span>
               </footer>
             </article>
           );
@@ -91,6 +106,18 @@ const {
 <style>
   section.hero {
     text-align: center;
+    padding-bottom: calc(0.5 * var(--pico-spacing));
+    margin-bottom: 0;
+
+    > h1 {
+      margin-bottom: calc(0.25 * var(--pico-typography-spacing-vertical));
+    }
+
+    > p {
+      color: var(--pico-muted-color);
+      font-size: calc(var(--pico-font-size) * 0.8);
+      margin-bottom: calc(0.25 * var(--pico-typography-spacing-vertical));
+    }
   }
 
   main > hr {
@@ -105,8 +132,17 @@ const {
       box-shadow: 0 0 0.5rem var(--pico-muted-border-color);
 
       > footer {
+        display: flex;
         color: var(--pico-muted-color);
-        font-size: small;
+        font-size: calc(0.6 * var(--pico-font-size));
+        vertical-align: middle;
+        align-items: center;
+
+        > span {
+          display: flex;
+          height: 100%;
+          margin-right: calc(0.3 * var(--pico-spacing));
+        }
       }
     }
   }

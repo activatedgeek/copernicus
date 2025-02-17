@@ -14,6 +14,8 @@ import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 // import rehypeToC from "rehype-toc";
 
+import remarkReadingTime from "./src/lib/plugins/remark-reading-time";
+
 export default defineConfig({
   vite: {
     resolve: {
@@ -32,7 +34,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "vitesse-light",
     },
-    remarkPlugins: [remarkEmoji, remarkHint, remarkMath],
+    remarkPlugins: [remarkEmoji, remarkHint, remarkMath, remarkReadingTime],
     rehypePlugins: [
       [
         rehypeExternalLinks,

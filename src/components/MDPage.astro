@@ -1,6 +1,8 @@
 ---
 import { render } from "astro:content";
-import { FaCalendarDay, FaTag } from "react-icons/fa";
+import { AiOutlineTags } from "react-icons/ai";
+import { LuCalendarRange } from "react-icons/lu";
+import { PiTimerBold } from "react-icons/pi";
 
 import Html from "@components/Html.astro";
 import Date from "@components/Date.astro";
@@ -11,10 +13,22 @@ import "@styles/katex.css";
 
 const { page } = Astro.props;
 const { data: frontmatter } = page;
-const { Content } = await render(page);
+const { Content, remarkPluginFrontmatter: remarkFrontmatter } =
+  await render(page);
 
 const { title, description, date, updated, area, comments, hideMetadata } =
   frontmatter;
+const { readMins } = remarkFrontmatter;
+
+const readMinsToText = (value) => {
+  if (value < 1) {
+    return "<1 min";
+  }
+  if (value == 1) {
+    return "1 min";
+  }
+  return `${value} mins`;
+};
 ---
 
 <style>
@@ -43,9 +57,12 @@ const { title, description, date, updated, area, comments, hideMetadata } =
         vertical-align: middle;
         align-items: center;
         margin-right: calc(0.7 * var(--pico-spacing));
-        font-size: calc(var(--pico-font-size) * 0.6);
 
-        > span.date {
+        > svg {
+          margin-right: calc(0.25 * var(--pico-spacing));
+        }
+
+        > span[class="info-text"] {
           display: inline-block;
           border: solid var(--pico-muted-border-color) var(--pico-border-width);
           border-radius: calc(1.5 * var(--pico-border-radius));
@@ -53,6 +70,11 @@ const { title, description, date, updated, area, comments, hideMetadata } =
             calc(0.4 * var(--pico-spacing));
           background-color: #f8fafc;
           border-color: #64748b;
+          font-size: calc(var(--pico-font-size) * 0.6);
+        }
+
+        > span[class="area"] {
+          font-size: calc(var(--pico-font-size) * 0.6);
         }
       }
     }
@@ -75,34 +97,28 @@ const { title, description, date, updated, area, comments, hideMetadata } =
   />
   <main data-pagefind-body>
     <section style="text-align: center;">
-      <h1 style="--pico-font-size: 2.5rem;">{title}</h1>
-      <p style="--pico-font-size: 1.5rem;">{description}</p>
+      <h1 style={{ fontSize: "calc(1.2 * var(--pico-font-size))" }}>{title}</h1>
+      <p style={{ fontSize: "calc(0.8 * var(--pico-font-size))" }}>
+        {description}
+      </p>
       <div style={hideMetadata ? "display: none;" : "display: inline-block;"}>
+        {
+          updated || date ? (
+            <div>
+              <LuCalendarRange className="icon" />
+              <span class="info-text">
+                <Date date={updated || date} />
+              </span>
+            </div>
+          ) : null
+        }
         <div>
-          {
-            updated || date ? (
-              <>
-                <FaCalendarDay
-                  style={{
-                    marginRight: "calc(0.25 * var(--pico-spacing))",
-                  }}
-                />
-                <span class="date">
-                  <Date date={updated || date} />
-                </span>
-              </>
-            ) : null
-          }
+          <PiTimerBold className="icon" />
+          <span class="info-text">{readMinsToText(readMins)}</span>
         </div>
         <div>
-          <FaTag
-            style={{
-              marginRight: "calc(0.25 * var(--pico-spacing))",
-            }}
-          />
-          <div>
-            <Area {area} />
-          </div>
+          <AiOutlineTags className="icon" />
+          <span class="area"><Area {area} /></span>
         </div>
       </div>
     </section>
