@@ -41,8 +41,8 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.9",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "npm-check-updates": "^17.1.14",
     "prettier": "^3.5.1",
     "prettier-plugin-astro": "^0.14.1"

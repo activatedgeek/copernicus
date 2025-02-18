@@ -7,6 +7,7 @@ area: math
 redirectsFrom:
   - /blog/ml/an-introduction-to-epipolar-geometry
   - /machine-learning/an-introduction-to-epipolar-geometry
+  - /computer-vision/an-introduction-to-epipolar-geometry
 ---
 
 In this post we will take a look at how Camera Projections work. A demo at the

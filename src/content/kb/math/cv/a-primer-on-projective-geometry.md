@@ -5,6 +5,7 @@ date: Jul 19 2017, 3:08 +0530
 area: math
 redirectsFrom:
   - /blog/ml/a-primer-on-projective-geometry
+  - /cv/a-primer-on-projective-geometry
 ---
 
 Projective Geometry [^@hartley2003] is a term used to describe properties of projections of a given
