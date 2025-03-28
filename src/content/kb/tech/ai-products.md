@@ -56,6 +56,8 @@ These products/startups are a window into what startup founders and investors th
 
 [Suno AI](https://suno-ai.org) - Generate music with AI.
 
+[Blooper](https://blooper.ai) - Pre-production assistant and management.
+
 ### Operations
 
 [OpenCall](https://opencall.ai) - AI call center.

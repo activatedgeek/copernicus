@@ -2,6 +2,7 @@
 title: Elo Rating and the Brier score
 description: Is the Elo update rule related to the Brier score?
 date: Feb 17 2025, 18:21 -0400
+updated: Mar 28 2025, 12:12 -0400
 area: math
 ---
 
@@ -23,7 +24,9 @@ $$
 
 where $\kappa$ is a positive parameter that modulates the scale of the rating difference. For instance, if $\kappa = 400$, then a rating difference of $R_A-R_B = 400$ implies an approximately $90\%$ winning chance for player $A$.
 
-This equation is intuitive in the sense that the probability of $A$ beating $B$ increases as the rating difference positively increases, and vice versa. This equation is also familiarly called the [sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function) whose range is always between $0$ and $1$, and therefore can be interpreted as probabilities.
+This equation is intuitive in the sense that the probability of $A$ beating $B$ increases as the rating difference positively increases, and vice versa. This equation is also familiarly called the [sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function) whose range is always between $0$ and $1$, and therefore can be interpreted as probabilities. This assumption is based on the Bradley-Terry model.[^bterry]
+
+[^bterry]: See [Is Elo Rating Reliable? A Study Under Model Misspecification](https://arxiv.org/abs/2502.10985) for a recent discussion on its effectiveness.
 
 Now, let $O_A$ be a binary outcome variable that is $1$ if player $A$ wins and zero otherwise. In its simplest form, Elo ratings prescribe the rating to be updated using the rule,
 
