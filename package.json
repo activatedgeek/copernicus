@@ -1,7 +1,7 @@
 {
   "name": "copernicus",
   "type": "module",
-  "version": "0.12.3",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "pretty": "prettier --write .",
@@ -13,22 +13,22 @@
     "ncu": "ncu"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.3.1",
-    "@astrojs/mdx": "^4.2.2",
-    "@astrojs/react": "^4.2.2",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/cloudflare": "^12.6.0",
+    "@astrojs/mdx": "^4.3.1",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.2",
     "@picocss/pico": "^2.1.1",
-    "astro": "^5.5.5",
+    "astro": "^5.12.5",
     "autoprefixer": "^10.4.21",
-    "cssnano": "^7.0.6",
+    "cssnano": "^7.1.0",
     "github-slugger": "^2.0.0",
     "hastscript": "^9.0.1",
     "mdast-util-to-string": "^4.0.0",
     "node-emoji": "^2.2.0",
     "pagefind": "^1.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
@@ -41,10 +41,10 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "npm-check-updates": "^17.1.16",
-    "prettier": "^3.5.3",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "npm-check-updates": "^18.0.2",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
