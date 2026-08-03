@@ -8,13 +8,28 @@ import Goatcounter from "./Goatcounter.astro";
 import "@styles/main.css";
 
 const {
-  frontmatter: { title, description, area, date, updated, keywords, authors },
+  frontmatter: {
+    title,
+    description,
+    area,
+    date,
+    updated,
+    keywords = [],
+    authors = [{ collection: "authors", id: "sk" }],
+  },
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, import.meta.env.SITE);
 
 const authorsList = await Promise.all(
-  authors.map(async ({ collection: c, id }) => await getEntry(c, id)),
+  authors.map(async (author) => {
+    const { collection: c, id } =
+      typeof author === "string"
+        ? { collection: "authors", id: author }
+        : author;
+
+    return await getEntry(c, id);
+  }),
 );
 
 const {

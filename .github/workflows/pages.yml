@@ -15,8 +15,8 @@ env:
   GOATCOUNTER_SITE: ${{ vars.GOATCOUNTER_SITE }}
   GISCUS_REPO: ${{ github.repository }}
   GISCUS_REPO_ID: ${{ github.repository_id }}
-  GISCUSS_CATEGORY: ${{ vars.GISCUSS_CATEGORY }}
-  GISCUSS_CATEGORY_ID: ${{ vars.GISCUSS_CATEGORY_ID }}
+  GISCUS_CATEGORY: ${{ vars.GISCUS_CATEGORY }}
+  GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
   STATUS_SITE: ${{ vars.STATUS_SITE }}
   STATUS_SITE_ICON: ${{ vars.STATUS_SITE_ICON }}
   ## Node related.
@@ -38,11 +38,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build copernicus
         run: npm run build
